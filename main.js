@@ -67,6 +67,6 @@ autoUpdater.on('update-available', (ev, info) => {
 autoUpdater.on('download-progress', (progressObj) => {
 })
 
-autoUpdater.on('update-downloaded', (ev, info) => {
-  
+autoUpdater.on('update-downloaded', (ev, info) => {  
+  autoUpdater.quitAndInstall()
 })
