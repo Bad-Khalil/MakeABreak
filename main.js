@@ -61,12 +61,13 @@ app.on('activate', () => {
 // Updater
 // -------------------------------------------------------------------
 autoUpdater.on('update-available', (ev, info) => {
-
+  window.webContents.send('message', 'updateAvailable')
 })
 
 autoUpdater.on('download-progress', (progressObj) => {
 })
 
 autoUpdater.on('update-downloaded', (ev, info) => {  
+  window.webContents.send('message', 'updateDownloaded')
   autoUpdater.quitAndInstall()
 })
