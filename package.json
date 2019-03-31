@@ -5,9 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "node_modules/.bin/build --win --x64",
-    "build-osx": "node_modules/.bin/build --mac",
-    "build-both": "node_modules/.bin/build --mac --win --x64 --ia32"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "author": "Michael Lucas",
   "license": "ISC",

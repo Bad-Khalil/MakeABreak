@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const {autoUpdater} = require('electron-updater')
 
 // Behalten Sie eine globale Referenz auf das Fensterobjekt. 
 // Wenn Sie dies nicht tun, wird das Fenster automatisch geschlossen, 
@@ -28,7 +29,13 @@ function createWindow () {
 // Diese Methode wird aufgerufen, wenn Electron mit der
 // Initialisierung fertig ist und Browserfenster erschaffen kann.
 // Einige APIs können nur nach dem Auftreten dieses Events genutzt werden.
-app.on('ready', createWindow)
+app.on('ready', function () {
+  // Create the Menu
+  // const menu = Menu.buildFromTemplate(template);
+  // Menu.setApplicationMenu(menu);
+  autoUpdater.checkForUpdates()
+  createWindow()
+})
 
 // Verlassen, wenn alle Fenster geschlossen sind.
 app.on('window-all-closed', () => {
@@ -50,3 +57,16 @@ app.on('activate', () => {
 // In dieser Datei können Sie den Rest des App-spezifischen 
 // Hauptprozess-Codes einbinden. Sie können den Code auch 
 // auf mehrere Dateien aufteilen und diese hier einbinden.
+// -------------------------------------------------------------------
+// Updater
+// -------------------------------------------------------------------
+autoUpdater.on('update-available', (ev, info) => {
+
+})
+
+autoUpdater.on('download-progress', (progressObj) => {
+})
+
+autoUpdater.on('update-downloaded', (ev, info) => {
+  
+})
