@@ -15,6 +15,7 @@ $(function () {
          init()
       }
    })
+
    ipcRenderer.on('message', function (event, text) {
       $("#update").addClass("visible");
 
@@ -33,6 +34,6 @@ $(function () {
 
    ipcRenderer.on('downloading', function (event, percent) {
       $("#update").addClass("visible");
-      $("#update").html(percent + "%");
+      $("#update").html(roundTo(percent, 1) + "%");
    })
 })
