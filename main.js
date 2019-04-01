@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcRenderer } = require('electron')
 const {autoUpdater} = require('electron-updater')
+const ipc = require('electron').ipcMain
 
 // Behalten Sie eine globale Referenz auf das Fensterobjekt. 
 // Wenn Sie dies nicht tun, wird das Fenster automatisch geschlossen, 
@@ -29,7 +30,7 @@ function createWindow () {
     // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
     // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
     win = null
-  })
+  }) 
 }
 
 // Diese Methode wird aufgerufen, wenn Electron mit der
@@ -60,6 +61,7 @@ app.on('activate', () => {
   }
 })
 
+
 // In dieser Datei können Sie den Rest des App-spezifischen 
 // Hauptprozess-Codes einbinden. Sie können den Code auch 
 // auf mehrere Dateien aufteilen und diese hier einbinden.
@@ -77,4 +79,8 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (ev, info) => {  
   win.webContents.send('message', 'updateDownloaded')
   autoUpdater.quitAndInstall()
+})
+  
+ipc.on('finishedLoading', function (event, text) {
+  win.webContents.send('getVersion', 'Version ' + app.getVersion())  
 })
