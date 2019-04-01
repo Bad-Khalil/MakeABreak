@@ -11,7 +11,7 @@
 
 #progressbarInner {
     background-color: orange;
-    width        : 40%;
+    width        : 0%;
     height       : 5px;
     border-radius: 0px;
     transition   : width 3s;
@@ -32,7 +32,7 @@
     position: absolute;
 }
 
-#version {
+#version, #maxTimer {
     padding  : 15px;
     font-size: small;
 }
@@ -45,6 +45,14 @@
     color     : #fbfafa;
 }
 
+#barContainer{
+    margin-top: 10%;
+}
+
 .visible {
     display: block !important;
+}
+
+.invisible {
+    display: none;
 }

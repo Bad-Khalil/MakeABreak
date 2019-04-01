@@ -21,6 +21,8 @@
     "menubar": "^5.2.3",
     "node-notifier": "^5.2.1",
     "popper.js": "^1.14.7",
+    "round-to": "^3.0.0",
+    "tiny-timer": "^1.3.0",
     "wine": "0.9.8"
   },
   "devDependencies": {

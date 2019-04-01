@@ -7,7 +7,6 @@
 
   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -20,9 +19,11 @@
       <hr class="divider">
       <p class="lead">MakeABreak erinnert dich an Pausen, die du einhalten solltest.</p>
       <p>
-        <span id="pauseIn">Pause in X Sekunden | X Minuten</span><br>
-        <div id="progressbar">
-          <div id="progressbarInner"></div>
+        <div id="barContainer" class="invisible">
+          <span id="pauseIn"></span><br>
+          <div id="progressbar">
+            <div id="progressbarInner"></div>
+          </div>
         </div>
       </p>
     </div>
@@ -30,11 +31,12 @@
       <div class="row">
         <div class="col-lg4">
           <div class="container">
-            <a href="#" class="btn btn-primary my-2">Start</a>
+            <button id="timerStart" class="btn btn-primary my-2">Start</button>
           </div>
         </div>
         <div class="col-lg4">
-          <a href="#" class="btn btn-secondary my-2">Einstellungen</a>
+          <button class="btn btn-secondary my-2" disabled>Einstellungen</button>
+          <span id="maxTimer"></span>
         </div>
         <div class="col-lg4 versionContainer">
           <div id="version">Version X</div>
@@ -50,7 +52,9 @@
   }
 </script>
 
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/timer.js"></script>
 
 </html>
