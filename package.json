@@ -1,6 +1,6 @@
 {
   "name": "makeabreak",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "Kleiner Helfer",
   "main": "main.js",
   "scripts": {

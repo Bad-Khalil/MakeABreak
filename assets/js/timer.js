@@ -1,8 +1,8 @@
-const Timer = require('tiny-timer')
+const Timer   = require('tiny-timer')
 const roundTo = require('round-to');
 
 let timer = new Timer()
-let zeit = 50000
+let zeit  = 1800000
 
 $("#timerStart").click(function () {
     let btn = $("#timerStart")
@@ -20,7 +20,7 @@ $("#timerStart").click(function () {
     }
 })
 
-$("#maxTimer").html("Zeiteinstellung: " + zeit / 1000 + " Sekunden")
+$("#maxTimer").html("Zeiteinstellung: " + (zeit / 1000)/60 + " Minuten")
 
 /**
  * Rechnet anhand der Millisekunden die Prozentanzahl aus
