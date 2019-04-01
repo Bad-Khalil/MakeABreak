@@ -9,7 +9,13 @@ let win
 
 function createWindow () {
   // Erstellen des Browser-Fensters.
-  win = new BrowserWindow({ width: 600, height: 400 })
+  win = new BrowserWindow({
+    width      : 600,
+    height     : 400,
+    maximizable: false
+  })
+  
+  win.setResizable(false)
 
   // und Laden der index.html der App.
   win.loadFile('assets/pages/index.html')
