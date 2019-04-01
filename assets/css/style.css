@@ -27,6 +27,11 @@
     border-color: orange;
 }
 
+.versionContainer {
+    right: 0;
+    position: absolute;
+}
+
 #version {
     padding  : 15px;
     font-size: small;
