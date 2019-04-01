@@ -9,13 +9,13 @@ let win
 
 function createWindow () {
   // Erstellen des Browser-Fensters.
-  win = new BrowserWindow({ width: 550, height: 390 })
+  win = new BrowserWindow({ width: 600, height: 400 })
 
   // und Laden der index.html der App.
   win.loadFile('assets/pages/index.html')
 
   // Öffnen der DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
   // Ausgegeben, wenn das Fenster geschlossen wird.
   win.on('closed', () => {
