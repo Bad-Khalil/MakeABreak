@@ -9,7 +9,7 @@ let win
 
 function createWindow () {
   // Erstellen des Browser-Fensters.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({ width: 550, height: 390 })
 
   // und Laden der index.html der App.
   win.loadFile('assets/pages/index.html')

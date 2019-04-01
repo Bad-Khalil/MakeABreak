@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
 
-    <p>Version 4</p>
-    <div id="test">Noch nichts</div>
-  </body>
-  <script>
-      if (typeof module === 'object') {
-          window.module = module;
-          module = undefined;
-      }
-  </script>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
 
-  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="../js/index.js"></script>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <main role="main">
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Willkommen</h1>
+      <hr class="divider">
+      <p class="lead">MakeABreak erinnert dich an Pausen, die du einhalten solltest.</p>
+        <p>
+          <span id="pauseIn">Pause in X Sekunden | X Minuten</span><br>
+          <div id="progressbar">
+            <div id="progressbarInner"></div>
+          </div>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg4">
+              <div class="container">
+                <a href="#" class="btn btn-primary my-2">Start</a>
+              </div>
+            </div>
+            <div class="col-lg4">
+                <a href="#" class="btn btn-secondary my-2">Einstellungen</a>
+            </div>
+            <div class="col-lg4" style="margin-left: 44%">
+              <div id="version" class="">Version X</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 
+    
+    
+        <div class="row">
+          <div class="col-lg4">
+            <div class="container">
+              <a href="#" class="btn btn-primary my-2">Start</a>
+            </div>
+          </div>
+          <div class="col-lg4">
+              <a href="#" class="btn btn-secondary my-2">Einstellungen</a>
+          </div>
+          <div class="col-lg3">
+            <div>1</div>
+          </div>
+          <div class="col-lg4">
+            <div id="version" class="">Version X</div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+  </main>
+</body>
+<script>
+  if (typeof module === 'object') {
+    window.module = module;
+    module = undefined;
+  }
+</script>
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../js/index.js"></script>
+
 </html>

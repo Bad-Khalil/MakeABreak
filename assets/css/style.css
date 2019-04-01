@@ -1,0 +1,28 @@
+.divider {
+    border: 2px solid orange;
+}
+
+#progressbar {
+    width           : 100%;
+    background-color: #2e3141;
+    border-radius   : 5px;
+    padding         : 2px;
+}
+
+#progressbarInner {
+    background-color: orange;
+    width        : 40%;
+    height       : 5px;
+    border-radius: 0px;
+    transition   : width 3s;
+}
+
+.btn-primary{
+    background-color: orange;
+    border-color: orange;
+}
+
+#version {
+    padding  : 15px;
+    font-size: small;
+}

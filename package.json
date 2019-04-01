@@ -1,6 +1,6 @@
 {
   "name": "makeabreak",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Kleiner Helfer",
   "main": "main.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "auto-launch": "^5.0.5",
+    "bootstrap": "^4.3.1",
     "electron-debug": "^2.0.0",
     "electron-log": "^3.0.0",
     "electron-settings": "^3.2.0",
@@ -19,6 +20,7 @@
     "jquery": "^3.3.1",
     "menubar": "^5.2.3",
     "node-notifier": "^5.2.1",
+    "popper.js": "^1.14.7",
     "wine": "0.9.8"
   },
   "devDependencies": {
