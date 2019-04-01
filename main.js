@@ -96,7 +96,27 @@ ipc.on('timeOver', function () {
   })
 })
 
+ipc.on('settingsGespeichert', function () {  
+  win.webContents.send('window', 'reload') 
+})
+
 // Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
   win.webContents.send('getVersion', 'Version ' + app.getVersion()) 
+})
+
+ipc.on('openSettings', function (event, text) {
+  winSettings = new BrowserWindow({
+    width      : 300,
+    height     : 480,
+    maximizable: false
+  })
+
+  winSettings.setResizable(false)
+
+  // und Laden der index.html der App.
+  winSettings.loadFile('assets/pages/einstellungen.html')
+  winSettings.on('closed', () => {
+    winSettings = null
+  })
 })

@@ -7,22 +7,23 @@
     background-color: #2e3141;
     border-radius   : 5px;
     padding         : 2px;
+    margin-top      : 2%;
 }
 
 #progressbarInner {
     background-color: orange;
-    width        : 0%;
-    height       : 5px;
+    width: 0%;
+    height: 5px;
     border-radius: 0px;
-    transition   : width 3s;
+    transition: width 3s;
 }
 
-#buttonContainer{
-    bottom  : 0;
+#buttonContainer {
+    bottom: 0;
     position: absolute;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: orange;
     border-color: orange;
 }
@@ -32,20 +33,21 @@
     position: absolute;
 }
 
-#version, #maxTimer {
-    padding  : 15px;
+#version,
+#maxTimer {
+    padding: 15px;
     font-size: small;
 }
 
 #update {
-    display   : none;
-    font-size : small;
+    display: none;
+    font-size: small;
     background: #34d234;
-    padding   : 5px;
-    color     : #fbfafa;
+    padding: 5px;
+    color: #fbfafa;
 }
 
-#barContainer{
+#barContainer {
     margin-top: 10%;
 }
 
@@ -55,4 +57,22 @@
 
 .invisible {
     display: none;
+}
+
+.textfield {
+    padding: 2%;
+    width: 100%;
+}
+
+.status {
+    color: white;
+    padding: 5px;
+}
+
+.erfolg {
+    background-color: #0c9e0c;
+}
+
+.keinErfolg {
+    background-color: #bb1717;
 }

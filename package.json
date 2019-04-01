@@ -1,6 +1,6 @@
 {
   "name": "makeabreak",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kleiner Helfer",
   "main": "main.js",
   "scripts": {
@@ -16,7 +16,9 @@
     "electron-debug": "^2.0.0",
     "electron-log": "^3.0.0",
     "electron-settings": "^3.2.0",
+    "electron-store": "^3.0.0",
     "electron-updater": "^4.0.0",
+    "is-number": "^7.0.0",
     "jquery": "^3.3.1",
     "menubar": "^5.2.3",
     "node-notifier": "^5.4.0",

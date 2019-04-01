@@ -1,8 +1,29 @@
-const Timer   = require('tiny-timer')
+const Timer = require('tiny-timer')
 const roundTo = require('round-to');
+const Store = require('electron-store')
+const settingsStore = new Store()
 
 let timer = new Timer()
-let zeit  = 1800000
+var zeit
+
+init()
+
+function getTimeFromSettings() {
+    let timeMin = settingsStore.get('timeMin')
+    let timeSec = settingsStore.get('timeSec')
+    zeit = timeMin * 60 * 1000
+    zeit += timeSec * 1000
+
+    if (zeit === '') {
+        zeit = 10000
+    }
+}
+
+function init(){
+    getTimeFromSettings()
+    $("#maxTimer").html("Pause nach " + roundTo((zeit / 1000) / 60, 1) + " Minuten")
+}
+
 
 $("#timerStart").click(function () {
     let btn = $("#timerStart")
@@ -20,7 +41,7 @@ $("#timerStart").click(function () {
     }
 })
 
-$("#maxTimer").html("Zeiteinstellung: " + (zeit / 1000)/60 + " Minuten")
+$("#maxTimer").html("Pause nach " + roundTo((zeit / 1000) / 60, 1) + " Minuten")
 
 /**
  * Rechnet anhand der Millisekunden die Prozentanzahl aus
@@ -37,10 +58,15 @@ function getPercent(ms) {
  */
 function tick(ms) {
     let pauseInSec = roundTo(ms / 1000, 0)
-    let pauseInMin = roundTo(pauseInSec / 60, 0)
+    let pauseInMin = roundTo(pauseInSec / 60, 1)
+    let minutenString = "Minuten"
+
+    if (roundTo(pauseInMin, 1) == 1) {
+        minutenString = "Minute"
+    }
 
     $("#progressbarInner").width(getPercent(ms) + "%")
-    $("#pauseIn").html("Pause in " + pauseInSec + " Sekunden | " + pauseInMin + " Minuten")
+    $("#pauseIn").html("Pause in " + pauseInMin + " " + minutenString)
 }
 
 timer.on('tick', (ms) => {
