@@ -26,3 +26,15 @@
     padding  : 15px;
     font-size: small;
 }
+
+#update {
+    display   : none;
+    font-size : small;
+    background: #34d234;
+    padding   : 5px;
+    color     : #fbfafa;
+}
+
+.visible {
+    display: block !important;
+}
