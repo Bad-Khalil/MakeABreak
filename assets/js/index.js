@@ -5,6 +5,10 @@ const {
 $(function () {
    ipcRenderer.send('finishedLoading')
 
+   $("#version").click(function () {
+      ipcRenderer.send('openChangelog')
+   })
+
    $("#settingsBtn").click(function () {
       ipcRenderer.send('openSettings')
    })

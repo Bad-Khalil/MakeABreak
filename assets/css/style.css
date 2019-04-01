@@ -29,12 +29,13 @@
 }
 
 .versionContainer {
-    right: 0;
+    right   : 0;
     position: absolute;
+    cursor  : pointer;
 }
 
 #version,
-#maxTimer {
+#maxTimer, .smallTxt {
     padding: 15px;
     font-size: small;
 }

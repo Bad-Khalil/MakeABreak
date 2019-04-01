@@ -120,3 +120,19 @@ ipc.on('openSettings', function (event, text) {
     winSettings = null
   })
 })
+
+ipc.on('openChangelog', function (event, text) {
+  winSettings = new BrowserWindow({
+    width      : 380,
+    height     : 520,
+    maximizable: false
+  })
+
+  // winSettings.setResizable(false)
+
+  // und Laden der index.html der App.
+  winSettings.loadFile('assets/pages/changelog.html')
+  winSettings.on('closed', () => {
+    winSettings = null
+  })
+})

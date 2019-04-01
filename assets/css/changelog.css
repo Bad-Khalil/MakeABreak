@@ -1,0 +1,45 @@
+h3 {
+    font-size: 20px;
+}
+
+.badge {
+    display       : block;
+    width         : 100%;
+    float         : left;
+    font-size     : 12px;
+    border-radius : 3px;
+    margin-right  : 8px;
+    margin-top    : 3%;
+    margin-bottom : 1%;
+    padding       : 5px;
+    text-transform: uppercase;
+    text-align    : center;
+    color         : white;
+}
+
+.badge-added {
+    background-color: #27ae60;
+}
+
+.badge-verbessert {
+    background-color: #2980b9
+}
+
+.badge-fixed {
+    background-color: rgba(241, 196, 15, 0.89);
+    color: #383636;
+}
+
+.list-style-none {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-style-none li {
+    margin-bottom: 10px;
+}
+
+.text{
+    color: #7b7b7b;
+    font-size: 15px;
+}
