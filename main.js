@@ -1,21 +1,25 @@
-const { app, BrowserWindow, ipcRenderer } = require('electron')
-const {autoUpdater} = require('electron-updater')
-const ipc = require('electron').ipcMain
+const {
+  app,
+  BrowserWindow
+} = require('electron')
 
-// Behalten Sie eine globale Referenz auf das Fensterobjekt. 
-// Wenn Sie dies nicht tun, wird das Fenster automatisch geschlossen, 
-// sobald das Objekt dem JavaScript-Garbagekollektor übergeben wird.
+const path = require('path')
+const {
+  autoUpdater
+} = require('electron-updater')
+const ipc      = require('electron').ipcMain
+const notifier = require('node-notifier')
 
 let win
 
-function createWindow () {
+function createWindow() {
   // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
     width      : 600,
     height     : 400,
     maximizable: false
   })
-  
+
   win.setResizable(false)
 
   // und Laden der index.html der App.
@@ -30,7 +34,7 @@ function createWindow () {
     // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
     // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
     win = null
-  }) 
+  })
 }
 
 // Diese Methode wird aufgerufen, wenn Electron mit der
@@ -76,11 +80,23 @@ autoUpdater.on('download-progress', (progressObj) => {
   win.webContents.send('downloading', progressObj.percent)
 })
 
-autoUpdater.on('update-downloaded', (ev, info) => {  
+autoUpdater.on('update-downloaded', (ev, info) => {
   win.webContents.send('message', 'updateDownloaded')
   autoUpdater.quitAndInstall()
 })
-  
+
+// Wenn Zeit des Timers abgelaufen ist
+ipc.on('timeOver', function () {
+  notifier.notify({
+    title  : 'Make a Break',
+    message: 'Du solltest nun eine Pause einlegen!',
+    icon   : path.join(__dirname, 'icon.png'),         // Absolute path (doesn't work on balloons)
+    sound  : true,                                     // Only Notification Center or Windows Toasters
+    wait   : false                                     // Wait with callback, until user action is taken against notification
+  })
+})
+
+// Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
-  win.webContents.send('getVersion', 'Version ' + app.getVersion())  
+  win.webContents.send('getVersion', 'Version ' + app.getVersion()) 
 })

@@ -50,5 +50,7 @@ timer.on('tick', (ms) => {
 timer.on('statusChanged', (ms) => {})
 
 timer.on('done', (ms) => {
-    $("#pauseIn").html("FERTIG :)")
+    ipcRenderer.send('timeOver')
+    $("#pauseIn").html("100%")
+    $("#timerStart").html("Start")
 })
