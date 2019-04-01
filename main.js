@@ -8,7 +8,7 @@ const {
   autoUpdater
 } = require('electron-updater')
 const ipc      = require('electron').ipcMain
-const notifier = require('node-notifier')
+const notifier = require('electron-notifications')
 
 let win
 
@@ -87,12 +87,12 @@ autoUpdater.on('update-downloaded', (ev, info) => {
 
 // Wenn Zeit des Timers abgelaufen ist
 ipc.on('timeOver', function () {
-  notifier.notify({
-    title  : 'Make a Break',
+  notifier.notify('Make a Break', {
     message: 'Du solltest nun eine Pause einlegen!',
-    icon   : path.join(__dirname, 'icon.png'),         // Absolute path (doesn't work on balloons)
-    sound  : true,                                     // Only Notification Center or Windows Toasters
-    wait   : false                                     // Wait with callback, until user action is taken against notification
+    icon   : path.join(__dirname, 'icon.png'),  
+    buttons: ['Alles klar', 'Lieber nicht'],
+    duration: 10000,
+    flat: true
   })
 })
 
