@@ -87,12 +87,12 @@ autoUpdater.on('update-downloaded', (ev, info) => {
 
 // Wenn Zeit des Timers abgelaufen ist
 ipc.on('timeOver', function () {
-  notifier.notify('Make a Break', {
-    message: 'Du solltest nun eine Pause einlegen!',
-    icon   : path.join(__dirname, 'icon.png'),  
-    buttons: ['Alles klar', 'Lieber nicht'],
+  const notification = notifier.notify('Make a Break', {
+    message : 'PAUSE!',
+    icon    : path.join(__dirname, 'icon.png'),
+    buttons : ['OK'],
     duration: 10000,
-    flat: true
+    flat    : true
   })
 })
 
