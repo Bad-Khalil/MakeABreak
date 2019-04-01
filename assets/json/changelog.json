@@ -1,10 +1,18 @@
 {
     "entries": [{
             "datum": "01.04.2019",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "inhalte": [{
                     "art": "fixed",
                     "was": "Nachricht bei Pause behoben"
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Nach Klick auf OK, wird die Nachricht entfernt"
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Update laden verschönert"
                 }
             ]
         },

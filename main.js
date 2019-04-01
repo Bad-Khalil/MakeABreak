@@ -94,6 +94,10 @@ ipc.on('timeOver', function () {
     duration: 10000,
     flat    : true
   })
+  
+  notification.on('buttonClicked', (text, buttonIndex, options) => {
+    notification.close()
+  })
 })
 
 ipc.on('settingsGespeichert', function () {  

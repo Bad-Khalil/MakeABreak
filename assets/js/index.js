@@ -38,6 +38,6 @@ $(function () {
 
    ipcRenderer.on('downloading', function (event, percent) {
       $("#update").addClass("visible");
-      $("#update").html(roundTo(percent, 1) + "%");
+      $("#update").html("Lade Update: " + roundTo(percent, 1) + "%");
    })
 })
