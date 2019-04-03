@@ -1,7 +1,7 @@
 {
     "entries": [{
             "datum": "03.04.2019",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "inhalte": [{
                     "art": "added",
                     "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
