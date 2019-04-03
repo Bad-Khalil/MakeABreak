@@ -1,5 +1,25 @@
 {
     "entries": [{
+            "datum": "03.04.2019",
+            "version": "0.2.0",
+            "inhalte": [{
+                    "art": "added",
+                    "was": "Um ein Update zu installieren, muss man auf die Benachrichtigung klicken.<br>So wird der Timer nicht unterbrochen."
+                },
+                {
+                    "art": "added",
+                    "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Wenn man das Hauptfenster beendet, wird das Programm beendet."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Abhängigkeiten aktualisiert."
+                }
+            ]
+        }, {
             "datum": "01.04.2019",
             "version": "0.1.5",
             "inhalte": [{

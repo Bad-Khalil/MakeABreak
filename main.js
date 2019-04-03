@@ -35,6 +35,7 @@ function createWindow() {
     // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
     // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
     win = null
+    app.quit()
   })
 }
 
@@ -86,7 +87,7 @@ autoUpdater.on('update-downloaded', (ev, info) => {
   const notification = notifier.notify('Make a Break', {
     message : 'Update fertig geladen.',
     icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['Installieren'], 
+    buttons : ['Installieren'],
     duration: 10000,
     flat    : true
   })
