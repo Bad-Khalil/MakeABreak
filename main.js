@@ -7,16 +7,17 @@ const path = require('path')
 const {
   autoUpdater
 } = require('electron-updater')
-const ipc      = require('electron').ipcMain
+const ipc = require('electron').ipcMain
 const notifier = require('electron-notifications')
+const lockSystem = require('lock-system');
 
 let win
 
 function createWindow() {
   // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
-    width      : 600,
-    height     : 400,
+    width: 600,
+    height: 400,
     maximizable: false
   })
 
@@ -34,7 +35,29 @@ function createWindow() {
     // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
     // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
     win = null
+    app.quit()
   })
+}
+
+function timeOver(){
+ 
+  const notification = notifier.notify('Make a Break', {
+    message : 'PC wird gesperrt...',
+    icon    : path.join(__dirname, 'icon.png'),
+    buttons : ['OK'],
+    duration: 10000,
+    flat    : true
+  })
+  
+
+  notification.on('buttonClicked', (text, buttonIndex, options) => {
+    notification.close()
+  })
+
+  // Nach 5 Sekunden sperren
+  setTimeout(function () {
+    lockSystem();
+  }, 5000);
 }
 
 // Diese Methode wird aufgerufen, wenn Electron mit der
@@ -82,43 +105,44 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (ev, info) => {
   win.webContents.send('message', 'updateDownloaded')
-  autoUpdater.quitAndInstall()
-})
-
-// Wenn Zeit des Timers abgelaufen ist
-ipc.on('timeOver', function () {
   const notification = notifier.notify('Make a Break', {
-    message : 'PAUSE!',
+    message : 'Update fertig geladen.',
     icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['OK'],
+    buttons : ['Installieren'],
     duration: 10000,
     flat    : true
   })
-  
+
   notification.on('buttonClicked', (text, buttonIndex, options) => {
-    notification.close()
+    autoUpdater.quitAndInstall()
   })
 })
 
-ipc.on('settingsGespeichert', function () {  
-  win.webContents.send('window', 'reload') 
+
+
+
+// Wenn Zeit des Timers abgelaufen ist
+ipc.on('timeOver', function () {
+ timeOver()
+})
+
+ipc.on('settingsGespeichert', function () {
+  win.webContents.send('window', 'reload')
 })
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
-  win.webContents.send('getVersion', 'Version ' + app.getVersion()) 
+  win.webContents.send('getVersion', 'Version ' + app.getVersion())
 })
 
 ipc.on('openSettings', function (event, text) {
   winSettings = new BrowserWindow({
-    width      : 300,
-    height     : 480,
+    width: 300,
+    height: 480,
     maximizable: false
   })
 
   winSettings.setResizable(false)
-
-  // und Laden der index.html der App.
   winSettings.loadFile('assets/pages/einstellungen.html')
   winSettings.on('closed', () => {
     winSettings = null
@@ -127,14 +151,11 @@ ipc.on('openSettings', function (event, text) {
 
 ipc.on('openChangelog', function (event, text) {
   winSettings = new BrowserWindow({
-    width      : 380,
-    height     : 520,
+    width: 380,
+    height: 520,
     maximizable: false
   })
 
-  // winSettings.setResizable(false)
-
-  // und Laden der index.html der App.
   winSettings.loadFile('assets/pages/changelog.html')
   winSettings.on('closed', () => {
     winSettings = null
