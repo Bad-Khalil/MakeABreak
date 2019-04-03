@@ -1,7 +1,7 @@
 {
     "entries": [{
             "datum": "03.04.2019",
-            "version": "0.2.0",
+            "version": "0.2.3",
             "inhalte": [{
                     "art": "added",
                     "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
@@ -9,6 +9,10 @@
                 {
                     "art": "added",
                     "was": "Um ein Update zu installieren, muss man auf die Benachrichtigung klicken.<br>So wird der Timer nicht unterbrochen."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Updateprozess verschönert."
                 },
                 {
                     "art": "verbessert",

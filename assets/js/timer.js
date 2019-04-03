@@ -24,7 +24,6 @@ function getTimeFromSettings() {
     }
 }
 
-
 $("#timerStart").click(function () {
     let btn = $("#timerStart")
 

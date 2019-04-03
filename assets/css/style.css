@@ -3,11 +3,11 @@
 }
 
 #progressbar {
-    width           : 100%;
+    width: 100%;
     background-color: #2e3141;
-    border-radius   : 5px;
-    padding         : 2px;
-    margin-top      : 2%;
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: 2%;
 }
 
 #progressbarInner {
@@ -29,27 +29,44 @@
 }
 
 .versionContainer {
-    right   : 0;
+    right: 0;
     position: absolute;
-    cursor  : pointer;
+    cursor: pointer;
 }
 
 #version,
-#maxTimer, .smallTxt {
+#maxTimer,
+.smallTxt {
     padding: 15px;
     font-size: small;
 }
 
-#update {
-    display: none;
+#updateBar {
     font-size: small;
-    background: #34d234;
-    padding: 5px;
+    width: 100%;
+    background-color: #d6d7dc;
+    border-radius: 5px;
+    padding: 1px;
+    margin-top: 2%;
     color: #fbfafa;
+}
+
+#updateBarInner {
+    background-color: #34d234;
+    width: 0%;
+    height: 35px;
+    border-radius: 0px;
+    transition: width 3s;
 }
 
 #barContainer {
     margin-top: 10%;
+}
+
+#updateTxt {
+    font-size: small;
+    margin-bottom: -37px;
+    color: white;
 }
 
 .visible {

@@ -1,16 +1,17 @@
 ipcRenderer.on('message', function (event, text) {
-    $("#update").addClass("visible");
+    $("#updateBarContainer").removeClass('invisible')
 
     if (text == 'updateAvailable') {
        text = "Es ist ein Update verfügbar."
     } else if (text == 'updateDownloaded') {
+        $("#updateBarInner").width("100%")
        text = "Update erfolgreich heruntergeladen..."
     }
 
-    $("#update").html(text);
+    $("#updateTxt").html(text);
  })
 
  ipcRenderer.on('downloading', function (event, percent) {
-    $("#update").addClass("visible");
-    $("#update").html("Lade Update: " + roundTo(percent, 1) + "%");
+    $("#updateTxt").html("Lade Update: " + roundTo(percent, 1) + "%")
+    $("#updateBarInner").width(roundTo(percent,0) + "%")
  })
