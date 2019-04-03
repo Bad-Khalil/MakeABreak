@@ -134,8 +134,6 @@ ipc.on('openSettings', function (event, text) {
   })
 
   winSettings.setResizable(false)
-
-  // und Laden der index.html der App.
   winSettings.loadFile('assets/pages/einstellungen.html')
   winSettings.on('closed', () => {
     winSettings = null
@@ -149,9 +147,6 @@ ipc.on('openChangelog', function (event, text) {
     maximizable: false
   })
 
-  // winSettings.setResizable(false)
-
-  // und Laden der index.html der App.
   winSettings.loadFile('assets/pages/changelog.html')
   winSettings.on('closed', () => {
     winSettings = null
