@@ -7,16 +7,17 @@ const path = require('path')
 const {
   autoUpdater
 } = require('electron-updater')
-const ipc      = require('electron').ipcMain
+const ipc = require('electron').ipcMain
 const notifier = require('electron-notifications')
+const lockSystem = require('lock-system');
 
 let win
 
 function createWindow() {
   // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
-    width      : 600,
-    height     : 400,
+    width: 600,
+    height: 400,
     maximizable: false
   })
 
@@ -88,31 +89,38 @@ autoUpdater.on('update-downloaded', (ev, info) => {
 // Wenn Zeit des Timers abgelaufen ist
 ipc.on('timeOver', function () {
   const notification = notifier.notify('Make a Break', {
-    message : 'PAUSE!',
+    message : 'PC wird gesperrt...',
     icon    : path.join(__dirname, 'icon.png'),
     buttons : ['OK'],
     duration: 10000,
     flat    : true
   })
-  
+
   notification.on('buttonClicked', (text, buttonIndex, options) => {
     notification.close()
   })
+
+  // Nach 5 Sekunden sperren
+  setTimeout(function () {
+    lockSystem();
+  }, 5000);
+
 })
 
-ipc.on('settingsGespeichert', function () {  
-  win.webContents.send('window', 'reload') 
+
+ipc.on('settingsGespeichert', function () {
+  win.webContents.send('window', 'reload')
 })
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
-  win.webContents.send('getVersion', 'Version ' + app.getVersion()) 
+  win.webContents.send('getVersion', 'Version ' + app.getVersion())
 })
 
 ipc.on('openSettings', function (event, text) {
   winSettings = new BrowserWindow({
-    width      : 300,
-    height     : 480,
+    width: 300,
+    height: 480,
     maximizable: false
   })
 
@@ -127,8 +135,8 @@ ipc.on('openSettings', function (event, text) {
 
 ipc.on('openChangelog', function (event, text) {
   winSettings = new BrowserWindow({
-    width      : 380,
-    height     : 520,
+    width: 380,
+    height: 520,
     maximizable: false
   })
 
