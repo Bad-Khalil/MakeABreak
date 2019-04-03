@@ -39,6 +39,27 @@ function createWindow() {
   })
 }
 
+function timeOver(){
+ 
+  const notification = notifier.notify('Make a Break', {
+    message : 'PC wird gesperrt...',
+    icon    : path.join(__dirname, 'icon.png'),
+    buttons : ['OK'],
+    duration: 10000,
+    flat    : true
+  })
+  
+
+  notification.on('buttonClicked', (text, buttonIndex, options) => {
+    notification.close()
+  })
+
+  // Nach 5 Sekunden sperren
+  setTimeout(function () {
+    lockSystem();
+  }, 5000);
+}
+
 // Diese Methode wird aufgerufen, wenn Electron mit der
 // Initialisierung fertig ist und Browserfenster erschaffen kann.
 // Einige APIs können nur nach dem Auftreten dieses Events genutzt werden.
@@ -97,24 +118,12 @@ autoUpdater.on('update-downloaded', (ev, info) => {
   })
 })
 
+
+
+
 // Wenn Zeit des Timers abgelaufen ist
 ipc.on('timeOver', function () {
-  const notification = notifier.notify('Make a Break', {
-    message : 'PC wird gesperrt...',
-    icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['OK'],
-    duration: 10000,
-    flat    : true
-  })
-
-  notification.on('buttonClicked', (text, buttonIndex, options) => {
-    notification.close()
-  })
-
-  // Nach 5 Sekunden sperren
-  setTimeout(function () {
-    lockSystem();
-  }, 5000);
+ timeOver()
 })
 
 ipc.on('settingsGespeichert', function () {
