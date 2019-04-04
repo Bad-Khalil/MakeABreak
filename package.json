@@ -1,6 +1,6 @@
 {
   "name": "makeabreak",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "MakeABreak - Der kleine Helfer :)",
   "main": "main.js",
   "scripts": {
@@ -36,12 +36,10 @@
     "http-server": "0.11.1"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "generic",
-        "url": "http://tests.michael-lucas.net/makeabreakupdates/"
-      }
-    ],
+    "publish": [{
+      "provider": "generic",
+      "url": "http://tests.michael-lucas.net/makeabreakupdates/"
+    }],
     "appId": "com.github.michael-lucas-net.makeabreak",
     "mac": {
       "category": "System",
