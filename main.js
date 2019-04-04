@@ -138,7 +138,7 @@ ipc.on('finishedLoading', function (event, text) {
 ipc.on('openSettings', function (event, text) {
   winSettings = new BrowserWindow({
     width: 300,
-    height: 480,
+    height: 435,
     maximizable: false
   })
 
