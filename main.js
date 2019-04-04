@@ -9,7 +9,6 @@ const {
 } = require('electron-updater')
 const ipc = require('electron').ipcMain
 const notifier = require('electron-notifications')
-const lockSystem = require('lock-system');
 
 let win
 
@@ -37,26 +36,6 @@ function createWindow() {
     win = null
     app.quit()
   })
-}
-
-function timeOver(){
- 
-  const notification = notifier.notify('Make a Break', {
-    message : 'PC wird gesperrt...',
-    icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['OK'],
-    duration: 100000,
-    flat    : true
-  })  
-
-  notification.on('buttonClicked', (text, buttonIndex, options) => {
-    notification.close()
-  })
-
-  // Nach 5 Sekunden sperren
-  setTimeout(function () {
-    lockSystem();
-  }, 5000);
 }
 
 // Diese Methode wird aufgerufen, wenn Electron mit der
