@@ -1,5 +1,31 @@
 {
     "entries": [{
+            "datum": "04.04.2019",
+            "version": "0.3.0",
+            "inhalte": [{
+                    "art": "hinzugefügt",
+                    "was": "Wenn noch keine Werte gesetzt wurden, wird der Wert auf 30 Minuten gesetzt."
+                },{
+                    "art": "hinzugefügt",
+                    "was": "Im Changelog werden die Einträge nun gruppiert."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Im Changelog heißt 'added' nun 'hinzugefügt'."
+                }, {
+                    "art": "verbessert",
+                    "was": "Darstellung im Einstellungsfenster verbessert."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Darstellung des Startbuttons verbessert."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Darstellung im Changelog verbessert."
+                }
+            ]
+        }, {
             "datum": "03.04.2019",
             "version": "0.2.5",
             "inhalte": [{
