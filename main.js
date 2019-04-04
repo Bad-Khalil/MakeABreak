@@ -45,10 +45,9 @@ function timeOver(){
     message : 'PC wird gesperrt...',
     icon    : path.join(__dirname, 'icon.png'),
     buttons : ['OK'],
-    duration: 10000,
+    duration: 100000,
     flat    : true
-  })
-  
+  })  
 
   notification.on('buttonClicked', (text, buttonIndex, options) => {
     notification.close()
@@ -67,7 +66,6 @@ app.on('ready', function () {
   // Create the Menu
   // const menu = Menu.buildFromTemplate(template);
   // Menu.setApplicationMenu(menu);
-  autoUpdater.checkForUpdates()
   createWindow()
 })
 
@@ -106,58 +104,19 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (ev, info) => {
   win.webContents.send('message', 'updateDownloaded')
   const notification = notifier.notify('Make a Break', {
-    message : 'Update fertig geladen.',
+    message : 'Programm fertig geladen.',
     icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['Installieren'],
-    duration: 10000,
+    buttons : ['Super'],
     flat    : true
   })
-
-  notification.on('buttonClicked', (text, buttonIndex, options) => {
-    autoUpdater.quitAndInstall()
-  })
+   autoUpdater.quitAndInstall()
 })
 
-
-
-
-// Wenn Zeit des Timers abgelaufen ist
-ipc.on('timeOver', function () {
- timeOver()
-})
-
-ipc.on('settingsGespeichert', function () {
-  win.webContents.send('window', 'reload')
+ipc.on('startUpdate', function () {
+  autoUpdater.checkForUpdates()
 })
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
   win.webContents.send('getVersion', 'Version ' + app.getVersion())
-})
-
-ipc.on('openSettings', function (event, text) {
-  winSettings = new BrowserWindow({
-    width: 300,
-    height: 435,
-    maximizable: false
-  })
-
-  winSettings.setResizable(false)
-  winSettings.loadFile('assets/pages/einstellungen.html')
-  winSettings.on('closed', () => {
-    winSettings = null
-  })
-})
-
-ipc.on('openChangelog', function (event, text) {
-  winSettings = new BrowserWindow({
-    width: 380,
-    height: 520,
-    maximizable: false
-  })
-
-  winSettings.loadFile('assets/pages/changelog.html')
-  winSettings.on('closed', () => {
-    winSettings = null
-  })
 })
