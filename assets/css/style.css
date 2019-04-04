@@ -28,6 +28,20 @@
     border-color: orange;
 }
 
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #f5c745;
+    border-color: #f5c745;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(148, 115, 20, 0.19);
+}
+
 .versionContainer {
     right: 0;
     position: absolute;
