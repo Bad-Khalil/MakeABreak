@@ -1,7 +1,7 @@
-const Timer = require('tiny-timer')
+const Timer   = require('tiny-timer')
 const roundTo = require('round-to');
-const Store = require('electron-store')
-const isNumber = require('is-number')
+const Store   = require('electron-store')
+const mlMath  = require('ml-math')
 const settingsStore = new Store()
 
 let timer = new Timer()
@@ -20,7 +20,7 @@ function getTimeFromSettings() {
     zeit = timeMin * 60 * 1000
     zeit += timeSec * 1000
 
-    if (!isNumber(zeit)) {
+    if (!mlMath.isNumeric(zeit)) {
         zeit = 1800000
     }
 }

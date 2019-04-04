@@ -3,7 +3,7 @@ const {
 } = require('electron')
 const Store = require('electron-store')
 const settingsStore = new Store()
-const isNumber = require('is-number')
+const mlMath = require('ml-math')
 
 $(function () {
     let timeMin = settingsStore.get('timeMin')
@@ -19,15 +19,31 @@ $("#timeMin").change(function () {
 })
 
 $("#btnSpeichern").click(function () {
-    let min = $("#timeMin").val()
-    let sec = $("#timeSec").val()
+    let min    = $("#timeMin").val()
+    let sec    = $("#timeSec").val()
     let status = $("#status")
     status.addClass("status")
 
-    if (!isNumber(min) || !isNumber(sec)) {
-        status.addClass('keinErfolg')
-        status.html("Ungültige Zahl!")
-        return;
+    if (!mlMath.isNumeric(min)){
+        if (mlMath.isNumeric(sec)){
+            min = 0
+            $("#timeMin").val('0')
+        }else{
+            status.addClass('keinErfolg')
+            status.html("Ungültige Zahl!")
+            return; 
+        }
+    }
+
+    if (!mlMath.isNumeric(sec)){
+        if (mlMath.isNumeric(min)){
+            sec = 0
+            $("#timeSec").val('0')
+        }else{
+            status.addClass('keinErfolg')
+            status.html("Ungültige Zahl!")
+            return; 
+        }
     }
 
     status.addClass('erfolg')
