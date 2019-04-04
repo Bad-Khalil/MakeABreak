@@ -109,11 +109,6 @@ app-builder-lib@20.39.0, app-builder-lib@~20.39.0:
     semver "^5.6.0"
     temp-file "^3.3.2"
 
-applescript@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/applescript/-/applescript-1.0.0.tgz#bb87af568cad034a4e48c4bdaf6067a3a2701317"
-  integrity sha1-u4evVoytA0pOSMS9r2Bno6JwExc=
-
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -178,17 +173,6 @@ author-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/author-regex/-/author-regex-1.0.0.tgz#d08885be6b9bbf9439fe087c76287245f0a81450"
   integrity sha1-0IiFvmubv5Q5/gh8dihyRfCoFFA=
-
-auto-launch@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/auto-launch/-/auto-launch-5.0.5.tgz#d14bd002b1ef642f85e991a6195ff5300c8ad3c0"
-  integrity sha512-ppdF4mihhYzMYLuCcx9H/c5TUOCev8uM7en53zWVQhyYAJrurd2bFZx3qQVeJKF2jrc7rsPRNN5cD+i23l6PdA==
-  dependencies:
-    applescript "^1.0.0"
-    mkdirp "^0.5.1"
-    path-is-absolute "^1.0.0"
-    untildify "^3.0.2"
-    winreg "1.2.4"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -841,10 +825,10 @@ electron-localshortcut@^3.0.0:
     keyboardevent-from-electron-accelerator "^1.1.0"
     keyboardevents-areequal "^0.2.1"
 
-electron-log@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-3.0.4.tgz#d2e296157999f540621300183662882bb6d14991"
-  integrity sha512-W99wnksbZlH+CZgauXCG0JPw03902QeyQPxfrfdfQ3gzei2QqXb3tYpn21I4t2L/aI3D2Lp9hiUj6iawVfq4WA==
+electron-log@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-3.0.5.tgz#9bdd307f1f1aec85c0873babd6bdfffb1a661436"
+  integrity sha512-wWOPNBVGh7NJx/OLXdgtuYrqxoG9ZWO+kZYloIHi66B5W9EgXZw71jdZ1ddeWNg4CkABypa8tkrRGqCKF+9tYg==
 
 electron-notarize@^0.0.5:
   version "0.0.5"
@@ -1526,11 +1510,6 @@ is-npm@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
   integrity sha1-8vtjpl5JBbQGyGBydloaTceTufQ=
 
-is-number@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
-  integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
-
 is-obj@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
@@ -1932,11 +1911,6 @@ locate-path@^3.0.0:
   dependencies:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
-
-lock-system@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/lock-system/-/lock-system-1.3.0.tgz#1842c9163c99fce905b34693f73fd7e2e9b65e46"
-  integrity sha512-gSMfmR+PygNDe5FFN9FNguRT1oyqE05XVCL0Pn62tNqe8X2CfDDBNkEF67lqOlWQ3C2u6hJ4YxAq8cyJ0EO9KQ==
 
 locutus@^2.0.5:
   version "2.0.10"
@@ -2508,10 +2482,10 @@ plist@^3.0.0, plist@^3.0.1:
     xmlbuilder "^9.0.7"
     xmldom "0.1.x"
 
-popper.js@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.7.tgz#e31ec06cfac6a97a53280c3e55e4e0c860e7738e"
-  integrity sha512-4q1hNvoUre/8srWsH7hnoSJ5xVmIL4qgz+s4qf2TnJIMyZFUFMGH+9vE7mXynAlHSZ/NdTmmow86muD0myUkVQ==
+popper.js@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
+  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
 
 portfinder@^1.0.13:
   version "1.0.20"
@@ -2792,11 +2766,6 @@ resolve@^1.1.6, resolve@^1.10.0:
   integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
   dependencies:
     path-parse "^1.0.6"
-
-round-to@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/round-to/-/round-to-3.0.0.tgz#f457177d68e5a1d9d55796528cd03daea0bb4fb9"
-  integrity sha512-h8xeIC7dRHkY++BGKtXTlO/FifRJdUmW5YObBk/8X9nc/2syNXKN8qUA6OvCgmPdtYlWvDqKZOuxz/CX6dcZNg==
 
 safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -3120,11 +3089,6 @@ timed-out@^4.0.0:
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
   integrity sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
 
-tiny-timer@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/tiny-timer/-/tiny-timer-1.3.0.tgz#2185f64f87000d234317d8a18a833e7d0506ce58"
-  integrity sha512-Lg39a7AAGItP/MQpV0U7dN/0WCisKx+kwaD2Ja/PcRCfbskhuo1Aqg0dyiIrvWutWov78hdwdtvsxav+UqQ5PQ==
-
 tmp-promise@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tmp-promise/-/tmp-promise-1.0.5.tgz#3208d7fa44758f86a2a4c4060f3c33fea30e8038"
@@ -3234,11 +3198,6 @@ unpipe@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
-
-untildify@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/untildify/-/untildify-3.0.3.tgz#1e7b42b140bcfd922b22e70ca1265bfe3634c7c9"
-  integrity sha512-iSk/J8efr8uPT/Z4eSUywnqyrQU7DSdMfdqK4iWEaUVVmcP5JcnpRqmVMwcwcnmI1ATFNgC5V90u09tBynNFKA==
 
 unzip-response@^2.0.1:
   version "2.0.1"
@@ -3358,11 +3317,6 @@ wine@0.9.8:
     markdown-it "^8.4.0"
     node-svn-ultimate "^1.1.0"
     twig "^1.10.5"
-
-winreg@1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/winreg/-/winreg-1.2.4.tgz#ba065629b7a925130e15779108cf540990e98d1b"
-  integrity sha1-ugZWKbepJRMOFXeRCM9UCZDpjRs=
 
 wordwrap@~0.0.2:
   version "0.0.3"
