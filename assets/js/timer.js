@@ -41,8 +41,6 @@ $("#timerStart").click(function () {
     }
 })
 
-$("#maxTimer").html("Pause nach " + roundTo((zeit / 1000) / 60, 1) + " Minuten")
-
 /**
  * Rechnet anhand der Millisekunden die Prozentanzahl aus
  * Ist für die Progressbar
