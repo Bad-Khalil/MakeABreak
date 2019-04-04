@@ -1,6 +1,7 @@
-const Timer   = require('tiny-timer')
+const Timer = require('tiny-timer')
 const roundTo = require('round-to');
-const Store   = require('electron-store')
+const Store = require('electron-store')
+const isNumber = require('is-number')
 const settingsStore = new Store()
 
 let timer = new Timer()
@@ -8,7 +9,7 @@ var zeit
 
 init()
 
-function init(){
+function init() {
     getTimeFromSettings()
     $("#maxTimer").html("Pause nach " + roundTo((zeit / 1000) / 60, 1) + " Minuten")
 }
@@ -19,8 +20,8 @@ function getTimeFromSettings() {
     zeit = timeMin * 60 * 1000
     zeit += timeSec * 1000
 
-    if (zeit === '') {
-        zeit = 10000
+    if (!isNumber(zeit)) {
+        zeit = 1800000
     }
 }
 
