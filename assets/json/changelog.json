@@ -1,11 +1,35 @@
 {
     "entries": [{
+            "datum": "06.04.2019",
+            "version": "0.3.1",
+            "inhalte": [{
+                    "art": "hinzugefügt",
+                    "was": "Es gibt nun den 'Nicht sperren' Button.<br>Nach Ablauf der Zeit wird der PC dann nicht gesperrt."
+                },
+                {
+                    "art": "hinzugefügt",
+                    "was": "Beenden Button hinzugefügt"
+                },
+                {
+                    "art": "hinzugefügt",
+                    "was": "Animationen hinzugefügt"
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Hauptfenster vergrößert"
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Codeverschönerungen"
+                }
+            ]
+        }, {
             "datum": "04.04.2019",
             "version": "0.3.0",
             "inhalte": [{
                     "art": "hinzugefügt",
                     "was": "Wenn noch keine Werte gesetzt wurden, wird der Wert auf 30 Minuten gesetzt."
-                },{
+                }, {
                     "art": "hinzugefügt",
                     "was": "Im Changelog werden die Einträge nun gruppiert."
                 },
