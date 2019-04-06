@@ -77,6 +77,10 @@
     margin-top: 10%;
 }
 
+#beenden {
+    cursor: pointer;
+}
+
 #updateTxt {
     font-size: small;
     margin-bottom: -37px;

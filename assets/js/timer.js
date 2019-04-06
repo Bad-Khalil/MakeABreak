@@ -25,6 +25,19 @@ function getTimeFromSettings() {
     }
 }
 
+$("#beenden").click(function () {
+    timer.stop()
+    $("#progressbarInner").width("0%")
+    $("#timerStart").html("Start")
+    $("#barContainer").removeClass()
+    $("#barContainer").addClass('animated shake')
+
+    setTimeout(function () {
+        $("#barContainer").removeClass()
+        $("#barContainer").addClass('animated fadeOutLeft')
+    }, 2000);
+})
+
 $("#timerStart").click(function () {
     let btn = $("#timerStart")
 
