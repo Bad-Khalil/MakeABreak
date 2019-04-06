@@ -37,7 +37,8 @@ $("#timerStart").click(function () {
     } else {
         btn.html("Pause")
         timer.start(zeit)
-        $("#barContainer").removeClass('invisible')
+        $("#barContainer").removeClass()
+        $("#barContainer").addClass('animated fadeIn animated-box in')
     }
 })
 

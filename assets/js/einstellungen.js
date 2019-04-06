@@ -22,7 +22,7 @@ $("#btnSpeichern").click(function () {
     let min    = $("#timeMin").val()
     let sec    = $("#timeSec").val()
     let status = $("#status")
-    status.addClass("status")
+    status.addClass("status animated bounceIn")
 
     if (!mlMath.isNumeric(min)){
         if (mlMath.isNumeric(sec)){
