@@ -1,7 +1,7 @@
-const Timer   = require('tiny-timer')
+const Timer = require('tiny-timer')
 const roundTo = require('round-to');
-const Store   = require('electron-store')
-const mlMath  = require('ml-math')
+const Store = require('electron-store')
+const mlMath = require('ml-math')
 const settingsStore = new Store()
 
 let timer = new Timer()
