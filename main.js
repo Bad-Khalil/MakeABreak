@@ -41,23 +41,26 @@ function createWindow() {
 
 function timeOver(){
  
+  let pcSperren = true;
   const notification = notifier.notify('Make a Break', {
-    message : 'PC wird gesperrt...',
+    message : 'In 10 Sek. wird PC gesperrt',
     icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['OK'],
+    buttons : ['Nicht sperren'],
     duration: 10000,
     flat    : true
-  })
-  
+  })  
 
   notification.on('buttonClicked', (text, buttonIndex, options) => {
+    pcSperren = false;
     notification.close()
-  })
+    win.setAlwaysOnTop(true);
+  })  
 
-  // Nach 5 Sekunden sperren
-  setTimeout(function () {
-    lockSystem();
-  }, 5000);
+  setTimeout(function () {    
+    if (pcSperren){
+      lockSystem();
+    }
+  }, 10000);
 }
 
 // Diese Methode wird aufgerufen, wenn Electron mit der
