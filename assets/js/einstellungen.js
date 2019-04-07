@@ -24,8 +24,8 @@ $("#btnSpeichern").click(function () {
     let status = $("#status")
     status.addClass("status animated bounceIn")
 
-    if (!mlMath.isNumeric(min)){
-        if (mlMath.isNumeric(sec)){
+    if (!mlMath.numbers.isNumeric(min)){
+        if (mlMath.numbers.isNumeric(sec)){
             min = 0
             $("#timeMin").val('0')
         }else{
@@ -35,8 +35,8 @@ $("#btnSpeichern").click(function () {
         }
     }
 
-    if (!mlMath.isNumeric(sec)){
-        if (mlMath.isNumeric(min)){
+    if (!mlMath.numbers.isNumeric(sec)){
+        if (mlMath.numbers.isNumeric(min)){
             sec = 0
             $("#timeSec").val('0')
         }else{

@@ -20,7 +20,7 @@ function getTimeFromSettings() {
     zeit = timeMin * 60 * 1000
     zeit += timeSec * 1000
 
-    if (!mlMath.isNumeric(zeit)) {
+    if (!mlMath.numbers.isNumeric(zeit)) {
         zeit = 1800000
     }
 }
