@@ -78,7 +78,9 @@
 }
 
 #beenden {
-    cursor: pointer;
+    cursor   : pointer;
+    font-size: small;
+    padding  : 10px;
 }
 
 #updateTxt {
