@@ -31,6 +31,7 @@
     "wine": "0.9.8"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "electron": "^4.1.4",
     "electron-builder": "^20.39.0",
     "electron-packager": "13.1.1",

@@ -135,7 +135,6 @@ ipc.on('settingsGespeichert', function () {
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
 ipc.on('finishedLoading', function (event, text) {
-  win.webContents.send('getVersion', 'Version ' + app.getVersion())
 })
 
 ipc.on('openSettings', function (event, text) {

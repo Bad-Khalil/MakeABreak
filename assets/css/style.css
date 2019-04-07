@@ -42,8 +42,8 @@
     box-shadow: 0 0 0 0.2rem rgba(148, 115, 20, 0.19);
 }
 
-.versionContainer {
-    right: 0;
+.infoContainer {
+    right: -40px;
     position: absolute;
     cursor: pointer;
 }

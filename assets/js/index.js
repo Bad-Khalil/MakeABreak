@@ -5,7 +5,7 @@ const {
 $(function () {
    ipcRenderer.send('finishedLoading')
 
-   $("#version").click(function () {
+   $("#openChangelog").click(function () {
       ipcRenderer.send('openChangelog')
    })
 
@@ -18,9 +18,5 @@ $(function () {
       if (text == 'reload') {
          init()
       }
-   })  
-
-   ipcRenderer.on('getVersion', function (event, version) {
-      $("#version").html(version)
    })
 })

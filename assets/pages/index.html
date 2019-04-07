@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animatedBorder.css">
   <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 
 </head>
 
@@ -31,7 +32,7 @@
           <div id="progressbar">
             <div id="progressbarInner"></div>
           </div>
-          <div id="beenden">Beenden</div>
+          <div id="beenden"><i class="fas fa-2x fa-stop-circle"></i></div>
         </div>
       </p>
     </div>
@@ -39,15 +40,17 @@
       <div class="row">
         <div class="col-lg4">
           <div class="container">
-            <button id="timerStart" class="btn btn-primary my-2">Start</button>
+            <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
           </div>
         </div>
         <div class="col-lg4">
-          <button id="settingsBtn" class="btn btn-secondary my-2">Einstellungen</button>
-          <span id="maxTimer"></span>
+          <button id="settingsBtn" class="btn btn-secondary my-2"><i class="fas fa-sliders-h"></i></button>
+          <!-- <span id="maxTimer"></span> -->
         </div>
-        <div class="col-lg4 versionContainer">
-          <div id="version">Version X</div>
+        <div class="col-lg4 infoContainer">
+          <div class="container">
+            <button id="openChangelog" class="btn btn-info my-2"><i class="fas fa-info"></i></button>
+          </div>
         </div>
       </div>
     </div>
