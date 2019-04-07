@@ -43,3 +43,8 @@ h3 {
     color: #7b7b7b;
     font-size: 15px;
 }
+
+.imageLink {
+    width : 80%;
+    cursor: pointer;
+}

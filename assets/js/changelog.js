@@ -61,3 +61,10 @@ function auslesen() {
   // Changelog füllen
   $('#changelog').html(inhalt)
 }
+
+$("#createdBy").click(function () {
+  const {
+    shell
+  } = require("electron"); +
+  shell.openExternal("https://www.michael-lucas.net");
+})
