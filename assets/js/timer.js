@@ -47,6 +47,7 @@ function getPercent(ms) {
 // -------------- Buttons --------------
 $("#timerStart").click(function () {
     let btn = $("#timerStart")
+    $("#startImg").addClass('invisible')
 
     if (timer.status == 'running') {
         btn.html(btnStartValue)
@@ -66,7 +67,16 @@ $("#beenden").click(function () {
     timer.stop()
     $("#progressbarInner").width("0%")
     $("#timerStart").html(btnStartValue)
+    $("#barContainer").removeClass()
     $("#barContainer").addClass('animated fadeOut')
+
+    setTimeout(function () {
+        $("#barContainer").removeClass()
+        $("#barContainer").addClass('invisible')
+        $("#startImg").removeClass()
+        $("#startImg").addClass('animated fadeIn')
+    }, 1000);
+
 })
 
 // -------------- TIMER  --------------
