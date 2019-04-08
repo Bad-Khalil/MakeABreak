@@ -1,5 +1,17 @@
 {
     "entries": [{
+            "datum": "08.04.2019",
+            "version": "0.4.0",
+            "inhalte": [{
+                    "art": "verbessert",
+                    "was": "Die komplette Darstellung wurde verschönert."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Kleine Bugfixes."
+                }
+            ]
+        }, {
             "datum": "06.04.2019",
             "version": "0.3.1",
             "inhalte": [{
