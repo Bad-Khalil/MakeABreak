@@ -20,7 +20,7 @@ function auslesen() {
   // Variablen initialisieren
   var inhalt = ''
   var art
-  var artEben
+  var artEben = ''
   var was
 
   // Alle Einträge durchgehen
@@ -39,13 +39,15 @@ function auslesen() {
       art = entries[i].inhalte[a].art
       was = entries[i].inhalte[a].was
 
-      if (artEben == entries[i].inhalte[a].art) {
+      if (artEben === entries[i].inhalte[a].art) {
         inhalt += `
         <br>- <span class='text'>${was}</span>`
       } else {
-        // Inhalt füllen
+
+        if (artEben !== ''){
+          inhalt += `</li>`
+        }
         inhalt += `
-        </li>
           <li>
             <div class="badge badge-${art}">${art}</div>
             - <span class='text'>${was}</span>`
