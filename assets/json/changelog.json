@@ -1,11 +1,13 @@
 {
-    "entries": [
-        {
+    "entries": [{
             "datum": "10.04.2019",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "inhalte": [{
-                    "art": "verbessert",
+                    "art": "hinzugefügt",
                     "was": "Das Changelog-Fenster wird jetzt eingeblendet."
+                }, {
+                    "art": "verbessert",
+                    "was": "Updateprozess verschönert ♥"
                 },
                 {
                     "art": "verbessert",
@@ -16,13 +18,13 @@
         {
             "datum": "08.04.2019",
             "version": "0.4.0",
-            "inhalte": [{
+            "inhalte": [
+                {
+                    "art": "fixed",
+                    "was": "Kleine Bugfixes."
+                },{
                     "art": "verbessert",
                     "was": "Die komplette Darstellung wurde verschönert."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Kleine Bugfixes."
                 }
             ]
         }, {
@@ -45,7 +47,7 @@
                     "was": "Hauptfenster vergrößert"
                 },
                 {
-                    "art": "verbessert",
+                    "art": "fixed",
                     "was": "Codeverschönerungen"
                 }
             ]
