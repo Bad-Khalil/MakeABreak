@@ -1,5 +1,19 @@
 {
-    "entries": [{
+    "entries": [
+        {
+            "datum": "10.04.2019",
+            "version": "0.4.1",
+            "inhalte": [{
+                    "art": "verbessert",
+                    "was": "Das Changelog-Fenster wird jetzt eingeblendet."
+                },
+                {
+                    "art": "verbessert",
+                    "was": "Bild im Hauptfenster geändert."
+                }
+            ]
+        },
+        {
             "datum": "08.04.2019",
             "version": "0.4.0",
             "inhalte": [{
