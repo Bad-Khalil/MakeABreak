@@ -108,23 +108,13 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (ev, info) => {
   win.webContents.send('message', 'updateDownloaded')
-  const notification = notifier.notify('Make a Break', {
-    message : 'Update fertig geladen.',
-    icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['Installieren'],
-    duration: 10000,
-    flat    : true
-  })
-
-  notification.on('buttonClicked', (text, buttonIndex, options) => {
-    autoUpdater.quitAndInstall()
-  })
 })
 
+ipc.on('installUpdate', function () {
+  autoUpdater.quitAndInstall(false)
+})
 
-
-
-// Wenn Zeit des Timers abgelaufen ist
+// Wenn Zeit des Timers abgelaufen i
 ipc.on('timeOver', function () {
  timeOver()
 })

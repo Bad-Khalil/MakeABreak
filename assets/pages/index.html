@@ -18,12 +18,7 @@
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center animated fadeIn">
       <h1 class="display-4"><img src="../img/logo.png" style="width: 10%;"> Make A Break</h1>
-      <div id="updateBarContainer" class="invisible">
-        <div id="updateTxt">Lade Update</div>
-        <div id="updateBar">
-          <div id="updateBarInner"></div>
-        </div>
-      </div>
+      
       <hr class="divider">
       <p class="lead">Mach mit Make A Break mehr Pausen und fühle dich wohler. 
         <div id="startImg">
@@ -42,15 +37,29 @@
     </div>
     <div class="container animated fadeIn" id="buttonContainer">
       <div class="row">
-        <div class="col-lg4">
+        <div class="col-lg2">
           <div class="container">
             <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
           </div>
         </div>
-        <div class="col-lg4">
-          <button id="settingsBtn" class="btn btn-secondary my-2"><i class="fas fa-sliders-h"></i></button>
-          <!-- <span id="maxTimer"></span> -->
+        <div class="col-lg2">
+          <button id="settingsBtn" class="btn btn-secondary my-2"><i class="fas fa-sliders-h"></i></button>          
         </div>
+
+        <div class="col-lg8">
+          <div id="updateBarContainer" class="invisible">
+            <div id="updateTxt"></div>
+            <div id="updateBar">
+              <div id="updateBarInner"></div>
+            </div>
+            <div id="updateActionContainer" style="display: inline-block">
+              <i id="syncIcon" class="fas fa-sync fa-spin"></i>
+              <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i class="fas fa-wrench"></i></button>                           
+            </div>
+            
+          </div>
+        </div>
+
         <div class="col-lg4 infoContainer">
           <div class="container">
             <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;" class="animated infinite pulse slow lead">Gibt's was neues? <i class="fas fa-arrow-right"></i></div>

@@ -55,11 +55,18 @@
     font-size: small;
 }
 
+#updateBarContainer {
+    display: inline-block;    
+    margin-left: 5%;
+    margin-top: 35px;
+}
+
 #updateBar {
     font-size: small;
-    width: 100%;
+    width: 30%;
     background-color: #d6d7dc;
     border-radius: 5px;
+    display: inline-block;
     padding: 1px;
     margin-top: 2%;
     color: #fbfafa;
@@ -68,9 +75,32 @@
 #updateBarInner {
     background-color: #34d234;
     width: 0%;
-    height: 35px;
+    height: 5px;
     border-radius: 0px;
     transition: width 3s;
+}
+
+#updateTxt {
+    color: #34d234;
+    font-size: small;
+    width: 300px;
+    margin-bottom: -23px;
+}
+
+#installUpdateBtn {
+    display: contents;
+}
+
+#updateActionContainer {
+    margin-left: 2%;
+}
+
+#syncIcon, #installUpdateBtn {
+    color: #3c3c3c; 
+}
+
+#syncIcon  {    
+    margin-left: 3%;
 }
 
 #barContainer {
@@ -81,12 +111,6 @@
     cursor   : pointer;
     font-size: small;
     padding  : 10px;
-}
-
-#updateTxt {
-    font-size: small;
-    margin-bottom: -37px;
-    color: white;
 }
 
 #openChangelog {    
@@ -100,7 +124,7 @@
 }
 
 .invisible {
-    display: none;
+    display: none !important;
 }
 
 .textfield {

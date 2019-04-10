@@ -5,13 +5,17 @@ ipcRenderer.on('message', function (event, text) {
        text = "Es ist ein Update verfügbar."
     } else if (text == 'updateDownloaded') {
         $("#updateBarInner").width("100%")
-       text = "Update erfolgreich heruntergeladen..."
+        $("#syncIcon").addClass('invisible')
+        $("#installUpdateBtn").removeClass('invisible')
     }
-
-    $("#updateTxt").html(text);
  })
 
  ipcRenderer.on('downloading', function (event, percent) {
-    $("#updateTxt").html("Lade Update: " + roundTo(percent, 1) + "%")
+   //  $("#updateTxt").html("Lade Update: " + roundTo(percent, 1) + "%")
     $("#updateBarInner").width(roundTo(percent,0) + "%")
+ })
+
+ 
+ $("#installUpdateBtn").click(function () {    
+   ipcRenderer.send('installUpdate')
  })
