@@ -1,7 +1,7 @@
 {
     "entries": [{
             "datum": "10.04.2019",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "inhalte": [{
                     "art": "hinzugefügt",
                     "was": "Das Changelog-Fenster wird jetzt eingeblendet."
