@@ -6,43 +6,50 @@
     <title>Make A Break!</title>
 
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../css/material/material-dashboard.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <main role="main">
-
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center animated fadeIn">
-            <h1 class="display-4" style="font-size: 2.5rem">Einstellungen</h1>
-            <div id="update"></div>
-            <hr class="divider">
-            <p class="lead" id="status">Setze hier deine Werte.</p>
-        </div>
-
-        <div class="container animated fadeIn">
-            <div class="row">
-                <div class="container">
-                    <div class="col-lg6">
-                        <label for="time">Pause nach x Minuten</label>
-                        <input type="text" id="timeMin" class="textfield" placeholder="Zeit in Minuten" value="30">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Einstellungen</h4>
+                    <p class="card-category">Ändere deine Einstellungen</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="container">
+                            <div class="col-lg6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Pause nach x Minuten</label>
+                                    <input id="timeMin" type="text" class="form-control" value="30">
+                                </div>
+                            </div>
+                            <div class="col-lg6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Pause nach x Sekundem</label>
+                                    <input type="text" id="timeSec" class="form-control" value="0">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg6">
-                        <label for="time">Pause nach x Sekunden</label>
-                        <input type="text" id="timeSec" class="textfield" placeholder="Zeit in Sekunden" value="0">
+
+                    <button id="btnSpeichern" type="submit" class="btn btn-primary pull-right"><i
+                            class="fas fa-save fa-2x"></i></button>
+                    <div id="status" class="invisible">
+                        <span>Gespeichert</span>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container" id="buttonContainer">
-            <div class="row">
-                <div class="col-lg-12">
-                    <button id="btnSpeichern" class="btn btn-primary my-2"><i class="fas fa-save"></i></button>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
 
     </main>
 </body>
@@ -56,5 +63,6 @@
 <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../js/einstellungen.js"></script>
+<script src="../js/material/material-dashboard.min.js"></script>
 
 </html>

@@ -19,10 +19,12 @@ $("#timeMin").change(function () {
 })
 
 $("#btnSpeichern").click(function () {
+    ipcRenderer.send('resize-me-please')
     let min    = $("#timeMin").val()
     let sec    = $("#timeSec").val()
     let status = $("#status")
-    status.addClass("status animated bounceIn")
+    status.removeClass()
+    status.addClass("animated bounceIn alert alert-primary")
 
     if (!mlMath.numbers.isNumeric(min)){
         if (mlMath.numbers.isNumeric(sec)){

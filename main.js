@@ -130,7 +130,7 @@ ipc.on('finishedLoading', function (event, text) {
 ipc.on('openSettings', function (event, text) {
   winSettings = new BrowserWindow({
     width: 300,
-    height: 435,
+    height: 440,
     maximizable: false
   })
 
@@ -142,14 +142,18 @@ ipc.on('openSettings', function (event, text) {
 })
 
 ipc.on('openChangelog', function (event, text) {
-  winSettings = new BrowserWindow({
+  winChangelog = new BrowserWindow({
     width: 380,
     height: 520,
     maximizable: false
   })
 
-  winSettings.loadFile('assets/pages/changelog.html')
-  winSettings.on('closed', () => {
-    winSettings = null
+  winChangelog.loadFile('assets/pages/changelog.html')
+  winChangelog.on('closed', () => {
+    winChangelog = null
   })
+})
+
+ipc.on('resize-me-please', (event, arg) => {
+  winSettings.setSize(300,520)
 })
