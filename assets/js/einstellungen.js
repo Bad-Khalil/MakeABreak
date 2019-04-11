@@ -19,7 +19,7 @@ $("#timeMin").change(function () {
 })
 
 $("#btnSpeichern").click(function () {
-    ipcRenderer.send('resize-me-please')
+    ipcRenderer.send('resizeSettings')
     let min    = $("#timeMin").val()
     let sec    = $("#timeSec").val()
     let status = $("#status")

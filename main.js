@@ -13,11 +13,14 @@ const lockSystem = require('lock-system');
 
 let win
 
+let winWidth = 625
+let winHeight = 490
+
 function createWindow() {
   // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
-    width: 625,
-    height: 470,
+    width: winWidth,
+    height: winHeight,
   })
 
   win.setResizable(false)
@@ -153,6 +156,14 @@ ipc.on('openChangelog', function (event, text) {
   })
 })
 
-ipc.on('resize-me-please', (event, arg) => {
+ipc.on('resizeSettings', (event, arg) => {
   winSettings.setSize(300,520)
+})
+
+ipc.on('resizeMain', (event, arg) => {
+  win.setSize(640,500)
+})
+
+ipc.on('resetMain', (event, arg) => {
+  win.setSize(winWidth,winHeight)
 })

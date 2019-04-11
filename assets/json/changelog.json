@@ -1,9 +1,16 @@
 {
     "entries": [{
             "datum": "11.04.2019",
+            "version": "0.5.1",
+            "inhalte": [{
+                "art": "fixed",
+                "was": "Es wurden Darstellungsprobleme behoben."
+            }]
+        },
+        {
+            "datum": "11.04.2019",
             "version": "0.5.0",
-            "inhalte": [
-                {
+            "inhalte": [{
                     "art": "hinzugefügt",
                     "was": "Aussehen wurde verändert."
                 },
@@ -23,15 +30,13 @@
         {
             "datum": "08.04.2019",
             "version": "0.4.0",
-            "inhalte": [
-                {
-                    "art": "fixed",
-                    "was": "Kleine Bugfixes."
-                },{
-                    "art": "verbessert",
-                    "was": "Die komplette Darstellung wurde verschönert."
-                }
-            ]
+            "inhalte": [{
+                "art": "fixed",
+                "was": "Kleine Bugfixes."
+            }, {
+                "art": "verbessert",
+                "was": "Die komplette Darstellung wurde verschönert."
+            }]
         }, {
             "datum": "06.04.2019",
             "version": "0.3.1",

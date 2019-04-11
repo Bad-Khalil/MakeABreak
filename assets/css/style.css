@@ -38,7 +38,7 @@
     width: 0%;
     height: 5px;
     border-radius: 0px;
-    transition: width 3s;
+    transition: width 1s;
 }
 
 #buttonContainer {

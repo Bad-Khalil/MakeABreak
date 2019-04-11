@@ -46,6 +46,8 @@ function getPercent(ms) {
 
 // -------------- Buttons --------------
 $("#timerStart").click(function () {
+    
+    ipcRenderer.send('resizeMain')
     let btn = $("#timerStart")
     $("#startImg").addClass('invisible')
 
@@ -69,6 +71,7 @@ $("#beenden").click(function () {
     $("#timerStart").html(btnStartValue)
     $("#barContainer").removeClass()
     $("#barContainer").addClass('animated fadeOut')
+    ipcRenderer.send('resetMain')
 
     setTimeout(function () {
         $("#barContainer").removeClass()
@@ -76,7 +79,6 @@ $("#beenden").click(function () {
         $("#startImg").removeClass()
         $("#startImg").addClass('animated fadeIn')
     }, 1000);
-
 })
 
 // -------------- TIMER  --------------
