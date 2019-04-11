@@ -41,11 +41,6 @@
     transition: width 1s;
 }
 
-#buttonContainer {
-    bottom: 0;
-    position: absolute;
-}
-
 .btn-primary {
     background-color: orange;
     border-color: orange;
@@ -66,7 +61,7 @@
 }
 
 .infoContainer {
-    right: -40px;
+    right: 0;
     bottom: 0;
     position: absolute;
 }
@@ -128,8 +123,8 @@
 }
 
 #barContainer {
-    margin-bottom: 15%;
-    margin-top: 5%;
+    margin-bottom: 20%;
+    margin-top: 16%;
 }
 
 #beenden {

@@ -13,31 +13,46 @@ const lockSystem = require('lock-system');
 
 let win
 
-let winWidth = 625
-let winHeight = 490
-
 function createWindow() {
-  // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
-    width: winWidth,
-    height: winHeight,
+    width : 715,
+    height: 720,
   })
 
-  win.setResizable(false)
-
-  // und Laden der index.html der App.
   win.loadFile('assets/pages/index.html')
 
   // Öffnen der DevTools.
   // win.webContents.openDevTools()
 
-  // Ausgegeben, wenn das Fenster geschlossen wird.
   win.on('closed', () => {
-    // Dereferenzieren des Fensterobjekts, normalerweise würden Sie Fenster
-    // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
-    // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
     win = null
     app.quit()
+  })
+}
+
+function createSettingsWindow(){
+  winSettings = new BrowserWindow({
+    width      : 520,
+    height     : 650,
+    maximizable: false
+  })
+
+  winSettings.loadFile('assets/pages/einstellungen.html')
+  winSettings.on('closed', () => {
+    winSettings = null
+  })
+}
+
+function createChangelogWindow() {
+  winChangelog = new BrowserWindow({
+    width: 380,
+    height: 520,
+    maximizable: false
+  })
+
+  winChangelog.loadFile('assets/pages/changelog.html')
+  winChangelog.on('closed', () => {
+    winChangelog = null
   })
 }
 
@@ -65,29 +80,21 @@ function timeOver(){
   }, 10000);
 }
 
-// Diese Methode wird aufgerufen, wenn Electron mit der
-// Initialisierung fertig ist und Browserfenster erschaffen kann.
-// Einige APIs können nur nach dem Auftreten dieses Events genutzt werden.
 app.on('ready', function () {
-  // Create the Menu
   // const menu = Menu.buildFromTemplate(template);
   // Menu.setApplicationMenu(menu);
   autoUpdater.checkForUpdates()
   createWindow()
 })
 
-// Verlassen, wenn alle Fenster geschlossen sind.
+
 app.on('window-all-closed', () => {
-  // Unter macOS ist es üblich, für Apps und ihre Menu Bar
-  // aktiv zu bleiben, bis der Nutzer explizit mit Cmd + Q die App beendet.
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
 app.on('activate', () => {
-  // Unter macOS ist es üblich ein neues Fenster der App zu erstellen, wenn
-  // das Dock Icon angeklickt wird und keine anderen Fenster offen sind.
   if (win === null) {
     createWindow()
   }
@@ -130,40 +137,9 @@ ipc.on('finishedLoading', function (event, text) {
 })
 
 ipc.on('openSettings', function (event, text) {
-  winSettings = new BrowserWindow({
-    width: 300,
-    height: 420,
-    maximizable: false
-  })
-
-  winSettings.setResizable(false)
-  winSettings.loadFile('assets/pages/einstellungen.html')
-  winSettings.on('closed', () => {
-    winSettings = null
-  })
+  createSettingsWindow()
 })
 
 ipc.on('openChangelog', function (event, text) {
-  winChangelog = new BrowserWindow({
-    width: 380,
-    height: 520,
-    maximizable: false
-  })
-
-  winChangelog.loadFile('assets/pages/changelog.html')
-  winChangelog.on('closed', () => {
-    winChangelog = null
-  })
-})
-
-ipc.on('resizeSettings', (event, arg) => {
-  winSettings.setSize(300,520)
-})
-
-ipc.on('resizeMain', (event, arg) => {
-  win.setSize(640,500)
-})
-
-ipc.on('resetMain', (event, arg) => {
-  win.setSize(winWidth,winHeight)
+  createChangelogWindow()
 })

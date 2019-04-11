@@ -1,0 +1,20 @@
+@media (min-width: 2500px) {
+    #barContainer {
+        margin-bottom: 15%;
+        margin-top: 7%;
+    }
+}
+
+@media (min-width: 1900px) {
+    #barContainer {
+        margin-bottom: 14%;
+        margin-top: 17%;
+    }
+}
+
+@media (min-width: 900px) {
+    #barContainer {
+        margin-bottom: 10%;
+        margin-top: 5%;
+    }
+}

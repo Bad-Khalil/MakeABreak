@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="../css/material/material-dashboard.min.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
@@ -23,14 +24,14 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title"><img src="../img/logo.png" style="width: 10%;"> Make A Break</h4>
+                <h4 class="card-title"><img src="../img/logo.png" style="width: 50px;"> Make A Break</h4>
                 <p class="card-category">Mach mit Make A Break mehr Pausen und fühle dich wohler.</p>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
                     <div id="startImg">
-                      <img style="width: 30%" src="../img/working-laptop.gif" />
+                      <img style="width: 270px" src="../img/working-laptop.gif" />
                     </div>
 
                     <div id="barContainer" class="invisible">
@@ -42,44 +43,46 @@
                     </div>
                   </div>
 
-                  <div class="container animated fadeIn" id="buttonContainer">
-                    <div class="row">
-                      <div class="col-lg2">
-                        <div class="container">
-                          <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
-                        </div>
-                      </div>
-                      <div class="col-lg2">
-                        <button id="settingsBtn" class="btn btn-muted my-2"><i
-                            class="fas fa-sliders-h"></i></button>
-                      </div>
+                  <div class="col-lg-12">
 
-                      <div class="col-lg8">
-                        <div id="updateBarContainer" class="invisible">
-                          <div id="updateTxt"></div>
-                          <div id="updateBar">
-                            <div id="updateBarInner"></div>
+                    <div class="animated fadeIn" id="buttonContainer">
+                      <div class="row">
+                        <div class="col-lg2">
+                          <div class="container">
+                            <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
                           </div>
-                          <div id="updateActionContainer" style="display: inline-block">
-                            <i id="syncIcon" class="fas fa-sync fa-spin"></i>
-                            <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i
-                                class="fas fa-wrench"></i></button>
-                          </div>
-
                         </div>
-                      </div>
+                        <div class="col-lg2">
+                          <button id="settingsBtn" class="btn btn-muted my-2"><i class="fas fa-sliders-h"></i></button>
+                        </div>
 
-                      <div class="col-lg4 infoContainer">
-                        <div class="container">
-                          <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;"
-                            class="animated infinite pulse slow lead text-muted">Gibt's was neues? <i
-                              class="fas fa-arrow-right"></i></div>
-                          <button id="openChangelog" class="btn btn-info"><i class="fas fa-info"></i></button>
+                        <div class="col-lg8">
+                          <div id="updateBarContainer" class="invisible">
+                            <div id="updateTxt"></div>
+                            <div id="updateBar">
+                              <div id="updateBarInner"></div>
+                            </div>
+                            <div id="updateActionContainer" style="display: inline-block">
+                              <i id="syncIcon" class="fas fa-sync fa-spin"></i>
+                              <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i
+                                  class="fas fa-wrench"></i></button>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="col-lg4 infoContainer">
+                          <div class="container">
+                            <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;"
+                              class="animated infinite pulse slow lead text-muted">Gibt's was neues? <i
+                                class="fas fa-arrow-right"></i></div>
+                            <button id="openChangelog" class="btn btn-info"><i class="fas fa-info"></i></button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
               </div>
             </div>
           </div>
