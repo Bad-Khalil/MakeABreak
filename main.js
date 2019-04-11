@@ -17,7 +17,7 @@ function createWindow() {
   // Erstellen des Browser-Fensters.
   win = new BrowserWindow({
     width: 625,
-    height: 500,
+    height: 470,
   })
 
   win.setResizable(false)
@@ -129,7 +129,7 @@ ipc.on('finishedLoading', function (event, text) {
 ipc.on('openSettings', function (event, text) {
   winSettings = new BrowserWindow({
     width: 300,
-    height: 440,
+    height: 420,
     maximizable: false
   })
 
