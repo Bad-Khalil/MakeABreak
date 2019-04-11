@@ -5,6 +5,14 @@
             "inhalte": [{
                 "art": "fixed",
                 "was": "Es wurden Darstellungsprobleme behoben."
+            },
+            {
+                "art" : "hinzugefügt",
+                "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
+            },
+            {
+                "art" : "hinzugefügt",
+                "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
             }]
         },
         {
