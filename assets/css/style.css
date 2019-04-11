@@ -1,11 +1,26 @@
-.card.bg-primary, .card .card-header-primary .card-icon, .card .card-header-primary .card-text, .card .card-header-primary:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-primary .back, .card.card-rotate.bg-primary .front, .btn.btn-primary{
-    background: linear-gradient(60deg,#9c27b0,#f9a825)
+.card.bg-primary,
+.card .card-header-primary .card-icon,
+.card .card-header-primary .card-text,
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text),
+.card.card-rotate.bg-primary .back,
+.card.card-rotate.bg-primary .front,
+.btn.btn-primary,
+#progressbarInner {
+    background: linear-gradient(60deg, #ab47bc, #8e24aa)
 }
 
-.card.bg-primary, .card .card-header-primary .card-icon, .card .card-header-primary .card-text, .card .card-header-primary:not(.card-header-icon):not(.card-header-text), .card.card-rotate.bg-primary .back, .card.card-rotate.bg-primary .front{
-    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(232, 138, 20, 0.4);
+.card.bg-primary,
+.card .card-header-primary .card-icon,
+.card .card-header-primary .card-text,
+.card .card-header-primary:not(.card-header-icon):not(.card-header-text),
+.card.card-rotate.bg-primary .back,
+.card.card-rotate.bg-primary .front {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(232, 138, 20, 0.4);
 }
 
+.card [class*=card-header-] .card-title+.card-category {
+    text-align: center;
+}
 
 .divider {
     border: 2px solid orange;
@@ -20,7 +35,6 @@
 }
 
 #progressbarInner {
-    background-color: orange;
     width: 0%;
     height: 5px;
     border-radius: 0px;
@@ -52,8 +66,8 @@
 }
 
 .infoContainer {
-    right   : -40px;
-    bottom  : 0;
+    right: -40px;
+    bottom: 0;
     position: absolute;
 }
 
@@ -65,7 +79,7 @@
 }
 
 #updateBarContainer {
-    display: inline-block;    
+    display: inline-block;
     margin-left: 5%;
     margin-top: 35px;
 }
@@ -104,25 +118,27 @@
     margin-left: 2%;
 }
 
-#syncIcon, #installUpdateBtn {
-    color: #3c3c3c; 
+#syncIcon,
+#installUpdateBtn {
+    color: #3c3c3c;
 }
 
-#syncIcon  {    
+#syncIcon {
     margin-left: 3%;
 }
 
 #barContainer {
-    margin-top: 10%;
+    margin-bottom: 15%;
+    margin-top: 5%;
 }
 
 #beenden {
-    cursor   : pointer;
+    cursor: pointer;
     font-size: small;
-    padding  : 10px;
+    padding: 10px;
 }
 
-#openChangelog {    
+#openChangelog {
     cursor: pointer;
     margin-bottom: 10px;
     margin-left: 7px;
@@ -153,4 +169,18 @@
 
 .keinErfolg {
     background-color: #bb1717;
+}
+
+#startImg {
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.btn.btn-secondary {
+    color: #fff;
+    background-color: #9c27b0;
+}
+
+#wasNeues {
+    font-size: small;
 }

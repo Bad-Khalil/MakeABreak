@@ -6,68 +6,88 @@
   <title>Make A Break!</title>
 
   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/animatedBorder.css">
   <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
   <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../css/material/material-dashboard.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
   <main role="main">
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center animated fadeIn">
-      <h1 class="display-4"><img src="../img/logo.png" style="width: 10%;"> Make A Break</h1>
-      
-      <hr class="divider">
-      <p class="lead">Mach mit Make A Break mehr Pausen und fühle dich wohler. 
-        <div id="startImg">
-          <img style="width: 30%" src="../img/working-laptop.gif" />
-        </div>
-      </p>
-      <p>
-        <div id="barContainer" class="invisible">
-          <span id="pauseIn"></span><br>
-          <div id="progressbar">
-            <div id="progressbarInner"></div>
-          </div>
-          <div id="beenden"><i class="fas fa-2x fa-stop-circle"></i></div>
-        </div>
-      </p>
-    </div>
-    <div class="container animated fadeIn" id="buttonContainer">
-      <div class="row">
-        <div class="col-lg2">
-          <div class="container">
-            <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
-          </div>
-        </div>
-        <div class="col-lg2">
-          <button id="settingsBtn" class="btn btn-secondary my-2"><i class="fas fa-sliders-h"></i></button>          
-        </div>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title"><img src="../img/logo.png" style="width: 10%;"> Make A Break</h4>
+                <p class="card-category">Mach mit Make A Break mehr Pausen und fühle dich wohler.</p>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="startImg">
+                      <img style="width: 30%" src="../img/working-laptop.gif" />
+                    </div>
 
-        <div class="col-lg8">
-          <div id="updateBarContainer" class="invisible">
-            <div id="updateTxt"></div>
-            <div id="updateBar">
-              <div id="updateBarInner"></div>
-            </div>
-            <div id="updateActionContainer" style="display: inline-block">
-              <i id="syncIcon" class="fas fa-sync fa-spin"></i>
-              <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i class="fas fa-wrench"></i></button>                           
-            </div>
-            
-          </div>
-        </div>
+                    <div id="barContainer" class="invisible">
+                      <span id="pauseIn"></span><br>
+                      <div id="progressbar">
+                        <div id="progressbarInner"></div>
+                      </div>
+                      <div id="beenden"><i class="fas fa-2x fa-stop-circle"></i></div>
+                    </div>
+                  </div>
 
-        <div class="col-lg4 infoContainer">
-          <div class="container">
-            <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;" class="animated infinite pulse slow lead">Gibt's was neues? <i class="fas fa-arrow-right"></i></div>
-            <button id="openChangelog" class="btn btn-info"><i class="fas fa-info"></i></button>
+
+                  <div class="container animated fadeIn" id="buttonContainer">
+                    <div class="row">
+                      <div class="col-lg2">
+                        <div class="container">
+                          <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
+                        </div>
+                      </div>
+                      <div class="col-lg2">
+                        <button id="settingsBtn" class="btn btn-muted my-2"><i
+                            class="fas fa-sliders-h"></i></button>
+                      </div>
+
+                      <div class="col-lg8">
+                        <div id="updateBarContainer" class="invisible">
+                          <div id="updateTxt"></div>
+                          <div id="updateBar">
+                            <div id="updateBarInner"></div>
+                          </div>
+                          <div id="updateActionContainer" style="display: inline-block">
+                            <i id="syncIcon" class="fas fa-sync fa-spin"></i>
+                            <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i
+                                class="fas fa-wrench"></i></button>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="col-lg4 infoContainer">
+                        <div class="container">
+                          <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;"
+                            class="animated infinite pulse slow lead text-muted">Gibt's was neues? <i
+                              class="fas fa-arrow-right"></i></div>
+                          <button id="openChangelog" class="btn btn-info"><i class="fas fa-info"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </main>
 </body>
 <script>
@@ -79,6 +99,7 @@
 
 <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../js/material/material-dashboard.min.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/timer.js"></script>
 <script src="../js/update.js"></script>

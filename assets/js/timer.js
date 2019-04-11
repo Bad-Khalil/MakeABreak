@@ -107,5 +107,5 @@ timer.on('statusChanged', (ms) => {})
 timer.on('done', (ms) => {
     ipcRenderer.send('timeOver')
     $("#pauseIn").html("100%")
-    $("#timerStart").html("Start")
+    $("#timerStart").html(btnStartValue)
 })
