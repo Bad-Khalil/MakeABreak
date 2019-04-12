@@ -1,7 +1,7 @@
 const Timer = require('tiny-timer')
 const roundTo = require('round-to');
 const Store = require('electron-store')
-const mlMath = require('ml-math')
+const {numbers} = require('ml-math')
 const settingsStore = new Store()
 
 const btnStartValue = "<i class='fas fa-rocket'></i>"
@@ -30,7 +30,7 @@ function getTimeFromSettings() {
     zeit = timeMin * 60 * 1000
     zeit += timeSec * 1000
 
-    if (!mlMath.numbers.isNumeric(zeit)) {
+    if (!numbers.isNumeric(zeit)) {
         zeit = 1800000
     }
 }

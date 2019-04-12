@@ -2167,9 +2167,9 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.1, mkdirp@~0.5.0:
     minimist "0.0.8"
 
 ml-math@^1.2.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/ml-math/-/ml-math-1.3.0.tgz#2dd5dd29629e3307e807c28bd83634ad200ce961"
-  integrity sha512-ksYGthhCLJOJPsm3oWFc+/GvJOINXTV4Denmt7ckfh0bAvRC2O875MFLZLOwqYy0cpWX1wFHUNhEkoseZWV9Pg==
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/ml-math/-/ml-math-1.3.1.tgz#0fc12b35ff3a8ac2a43f163cabf7f9239674dd32"
+  integrity sha512-wS+zf/i0PotchMsA42IQcrUErmvrkV/n8Pxdd9O4tI5Yb/2I2ZbrITHDmbbQGJkGR036LgZoXiWo6BEjJELoGw==
 
 ms@2.0.0:
   version "2.0.0"

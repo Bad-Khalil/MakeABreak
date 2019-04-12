@@ -1,12 +1,12 @@
 const {ipcRenderer} = require('electron')
 const Store = require('electron-store')
-const mlMath = require('ml-math')
+const {numbers} = require('ml-math')
 const settingsStore = new Store()
 
 function checkIfNumeric(min, sec) {
     let status = $("#status")
-    if (!mlMath.numbers.isNumeric(min)) {
-        if (mlMath.numbers.isNumeric(sec)) {
+    if (!numbers.isNumeric(min)) {
+        if (numbers.isNumeric(sec)) {
             min = 0
             $("#timeMin").val('0')
         } else {
@@ -16,8 +16,8 @@ function checkIfNumeric(min, sec) {
         }
     }
 
-    if (!mlMath.numbers.isNumeric(sec)) {
-        if (mlMath.numbers.isNumeric(min)) {
+    if (!numbers.isNumeric(sec)) {
+        if (numbers.isNumeric(min)) {
             sec = 0
             $("#timeSec").val('0')
         } else {
