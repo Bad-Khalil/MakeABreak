@@ -8,14 +8,14 @@ const {
   autoUpdater
 } = require('electron-updater')
 const ipc = require('electron').ipcMain
-const notifier = require('electron-notifications')
+const notifier = require('node-notifier')
 const lockSystem = require('lock-system');
 
 let win
 
 function createWindow() {
   win = new BrowserWindow({
-    width : 715,
+    width: 715,
     height: 720,
   })
 
@@ -30,10 +30,10 @@ function createWindow() {
   })
 }
 
-function createSettingsWindow(){
+function createSettingsWindow() {
   winSettings = new BrowserWindow({
-    width      : 520,
-    height     : 650,
+    width: 520,
+    height: 650,
     maximizable: false
   })
 
@@ -56,27 +56,21 @@ function createChangelogWindow() {
   })
 }
 
-function timeOver(){
- 
-  let pcSperren = true;
-  const notification = notifier.notify('Make a Break', {
-    message : 'In 10 Sek. wird PC gesperrt',
-    icon    : path.join(__dirname, 'icon.png'),
-    buttons : ['Nicht sperren'],
-    duration: 10000,
-    flat    : true
-  })  
+function timeOver() {
+  // let pcSperren = true;
 
-  notification.on('buttonClicked', (text, buttonIndex, options) => {
-    pcSperren = false;
-    notification.close()
-    win.setAlwaysOnTop(true);
-  })  
+  notifier.notify({
+      title  : 'Make A Break',
+      message: 'In 10 Sek. wird PC gesperrt',
+      icon   : path.join(__dirname, 'icon.png'),   // Absolute path (doesn't work on balloons)
+      sound  : true,                               // Only Notification Center or Windows Toasters
+      wait   : false                               // Wait with callback, until user action is taken against notification
+    },
+    function (err, response) {}
+  );
 
-  setTimeout(function () {    
-    if (pcSperren){
-      lockSystem();
-    }
+  setTimeout(function () {
+    lockSystem();
   }, 10000);
 }
 
@@ -86,7 +80,6 @@ app.on('ready', function () {
   autoUpdater.checkForUpdates()
   createWindow()
 })
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -125,7 +118,7 @@ ipc.on('installUpdate', function () {
 
 // Wenn Zeit des Timers abgelaufen i
 ipc.on('timeOver', function () {
- timeOver()
+  timeOver()
 })
 
 ipc.on('settingsGespeichert', function () {
@@ -133,8 +126,7 @@ ipc.on('settingsGespeichert', function () {
 })
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
-ipc.on('finishedLoading', function (event, text) {
-})
+ipc.on('finishedLoading', function (event, text) {})
 
 ipc.on('openSettings', function (event, text) {
   createSettingsWindow()
