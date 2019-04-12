@@ -1,19 +1,23 @@
 {
     "entries": [{
-            "datum": "11.04.2019",
-            "version": "0.5.2",
+            "datum": "12.04.2019",
+            "version": "0.5.3",
             "inhalte": [{
-                "art": "fixed",
-                "was": "Es wurden Darstellungsprobleme behoben."
-            },
-            {
-                "art" : "hinzugefügt",
-                "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
-            },
-            {
-                "art" : "hinzugefügt",
-                "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
-            }]
+                    "art": "fixed",
+                    "was": "Es wurden Darstellungsprobleme behoben."
+                }, {
+                    "art": "fixed",
+                    "was": "Kleinere Bugs wurden beseitigt :)"
+                },
+                {
+                    "art": "hinzugefügt",
+                    "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
+                },
+                {
+                    "art": "hinzugefügt",
+                    "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
+                }
+            ]
         },
         {
             "datum": "11.04.2019",
