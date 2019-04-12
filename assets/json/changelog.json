@@ -1,7 +1,7 @@
 {
     "entries": [{
             "datum": "12.04.2019",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "inhalte": [{
                     "art": "fixed",
                     "was": "Es wurden Darstellungsprobleme behoben."
