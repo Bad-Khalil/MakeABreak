@@ -9,6 +9,7 @@ const {
 } = require('electron-updater');
 const ipc = require('electron').ipcMain;
 const notifier = require('node-notifier');
+const notifierMac = require('electron-notifications');
 const lockSystem = require('lock-system');
 
 let win;
@@ -59,16 +60,28 @@ function createChangelogWindow() {
 function timeOver() {
     // let pcSperren = true;
 
-    notifier.notify({
+    var isWin = process.platform === "win32";
+
+    if (isWin){
+        notifier.notify({
             title: 'Make A Break',
             message: 'In 10 Sek. wird PC gesperrt',
             icon: path.join(__dirname, 'icon.png'),   // Absolute path (doesn't work on balloons)
             sound: true,                               // Only Notification Center or Windows Toasters
             wait: false                               // Wait with callback, until user action is taken against notification
-        },
-        function (err, response) {
-        }
-    );
+            },
+            function (err, response) {
+            }
+        );
+    }else{
+        const notification = notifierMac.notify('Make a Break', {
+            message : 'In 10 Sek. wird PC gesperrt',
+            icon    : path.join(__dirname, 'icon.png'),
+            buttons : ['Ok'],
+            duration: 10000,
+            flat    : true
+        })  
+    }
 
     setTimeout(function () {
         lockSystem();
