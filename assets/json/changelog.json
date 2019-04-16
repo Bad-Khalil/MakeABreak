@@ -5,6 +5,10 @@
       "version": "0.5.5",
       "inhalte": [
         {
+          "art": "fixed",
+          "was": "Benachrichtigungen beim Mac wurden korrigiert."
+        },
+        {
           "art": "hinzugefügt",
           "was": "Es gibt nun die Einstellungsmöglichkeit, bei Start des Timers das Fenster zu minimieren."
         }
