@@ -35,6 +35,7 @@ function save() {
     let sec = $("#timeSec").val()
     let status = $("#status")
     let minimieren = ''
+
     status.removeClass()
     status.addClass("animated bounceIn alert alert-primary")
 
@@ -72,7 +73,6 @@ $("#timeMin").change(function () {
     $("#status").removeClass('erfolg keinErfolg status')
     $("#status").html("Setze hier deine Werte.")
 })
-
 
 $("#btnSpeichern").click(function () {
     save()

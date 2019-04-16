@@ -1,31 +1,31 @@
 const {
-   ipcRenderer
+    ipcRenderer
 } = require('electron')
 
 $(function () {
-   ipcRenderer.send('finishedLoading')
-   setTimeout(function () {
-      $("#wasNeues").addClass("animated fadeOut")
+    ipcRenderer.send('finishedLoading')
+    setTimeout(function () {
+        $("#wasNeues").addClass("animated fadeOut")
 
-      setTimeout(function () {
-         $("#wasNeues").removeClass();
-         $("#wasNeues").addClass("invisible")
-      }, 1000);
-      
-  }, 2000);
+        setTimeout(function () {
+            $("#wasNeues").removeClass();
+            $("#wasNeues").addClass("invisible")
+        }, 1000);
 
-   $("#openChangelog").click(function () {
-      ipcRenderer.send('openChangelog')
-   })
+    }, 2000);
 
-   $("#settingsBtn").click(function () {
-      ipcRenderer.send('openSettings')
-   })
+    $("#openChangelog").click(function () {
+        ipcRenderer.send('openChangelog')
+    })
 
-   // Wird aufgerufen, wenn man in den Einstellungen auf Speichern geklickt hat
-   ipcRenderer.on('window', function (event, text) {
-      if (text == 'reload') {
-         init()
-      }
-   })
+    $("#settingsBtn").click(function () {
+        ipcRenderer.send('openSettings')
+    })
+
+    // Wird aufgerufen, wenn man in den Einstellungen auf Speichern geklickt hat
+    ipcRenderer.on('window', function (event, text) {
+        if (text == 'reload') {
+            init()
+        }
+    })
 })
