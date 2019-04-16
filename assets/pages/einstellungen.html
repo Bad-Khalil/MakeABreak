@@ -13,70 +13,70 @@
 </head>
 
 <body>
-    <main role="main">
-        <div class="container-fluid animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">Einstellungen</h4>
-                            <p class="card-category">Ändere deine Einstellungen</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="container">
+<main role="main">
+    <div class="container-fluid animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Einstellungen</h4>
+                        <p class="card-category">Ändere deine Einstellungen</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="container">
 
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Quickselect</label>
-                                            <select id="quickSelect" class="form-control form-control-lg">
-                                                <option value="">Wähle</option>
-                                                <option value="1">1 Minute</option>
-                                                <option value="5">5 Minuten</option>
-                                                <option value="10">10 Minuten</option>
-                                                <option value="15">15 Minuten</option>
-                                                <option value="20">20 Minuten</option>
-                                                <option value="25">25 Minuten</option>
-                                                <option value="30">30 Minuten</option>
-                                                <option value="35">35 Minuten</option>
-                                                <option value="40">40 Minuten</option>
-                                            </select>
-                                        </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Quickselect</label>
+                                        <select id="quickSelect" class="form-control form-control-lg">
+                                            <option value="">Wähle</option>
+                                            <option value="1">1 Minute</option>
+                                            <option value="5">5 Minuten</option>
+                                            <option value="10">10 Minuten</option>
+                                            <option value="15">15 Minuten</option>
+                                            <option value="20">20 Minuten</option>
+                                            <option value="25">25 Minuten</option>
+                                            <option value="30">30 Minuten</option>
+                                            <option value="35">35 Minuten</option>
+                                            <option value="40">40 Minuten</option>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Pause nach x Minuten</label>
-                                            <input id="timeMin" type="text" class="form-control" value="30">
-                                        </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Pause nach x Minuten</label>
+                                        <input id="timeMin" type="text" class="form-control" value="30">
                                     </div>
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Pause nach x Sekunden</label>
-                                            <input type="text" id="timeSec" class="form-control" value="0">
-                                        </div>
+                                </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Pause nach x Sekunden</label>
+                                        <input type="text" id="timeSec" class="form-control" value="0">
                                     </div>
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Minimieren nach Start</label><br>
-                                            <input type="checkbox"  id="minimieren"> Minimieren nach Start
-                                        </div>
+                                </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Minimieren nach Start</label><br>
+                                        <input type="checkbox" id="minimieren"> Minimieren nach Start
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <button id="btnSpeichern" type="submit" class="btn btn-primary pull-right"><i
-                                    class="fas fa-save fa-2x"></i></button>
-                            <div id="status" class="invisible">
-                                <span>Gespeichert</span>
-                            </div>
+                        <button id="btnSpeichern" type="submit" class="btn btn-primary pull-right"><i
+                                class="fas fa-save fa-2x"></i></button>
+                        <div id="status" class="invisible">
+                            <span>Gespeichert</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </main>
+</main>
 </body>
 <script>
     if (typeof module === 'object') {

@@ -1,176 +1,200 @@
 {
-    "entries": [{
-            "datum": "16.04.2019",
-            "version": "0.5.5",
-            "inhalte": [{
-                "art": "hinzugefügt",
-                "was": "Es gibt nun die Einstellungsmöglichkeit, bei Start des Timers das Fenster zu minimieren."
-            }]
-        }, {
-            "datum": "12.04.2019",
-            "version": "0.5.4",
-            "inhalte": [{
-                    "art": "fixed",
-                    "was": "Es wurden Darstellungsprobleme behoben."
-                }, {
-                    "art": "fixed",
-                    "was": "Kleinere Bugs wurden beseitigt :)"
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
-                }
-            ]
-        },
+  "entries": [
+    {
+      "datum": "16.04.2019",
+      "version": "0.5.5",
+      "inhalte": [
         {
-            "datum": "11.04.2019",
-            "version": "0.5.0",
-            "inhalte": [{
-                    "art": "hinzugefügt",
-                    "was": "Aussehen wurde verändert."
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Das Changelog-Fenster wird jetzt eingeblendet."
-                }, {
-                    "art": "verbessert",
-                    "was": "Updateprozess verschönert ♥"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Bild im Hauptfenster geändert."
-                }
-            ]
-        },
-        {
-            "datum": "08.04.2019",
-            "version": "0.4.0",
-            "inhalte": [{
-                "art": "fixed",
-                "was": "Kleine Bugfixes."
-            }, {
-                "art": "verbessert",
-                "was": "Die komplette Darstellung wurde verschönert."
-            }]
-        }, {
-            "datum": "06.04.2019",
-            "version": "0.3.1",
-            "inhalte": [{
-                    "art": "hinzugefügt",
-                    "was": "Es gibt nun den 'Nicht sperren' Button.<br>Nach Ablauf der Zeit wird der PC dann nicht gesperrt."
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Beenden Button hinzugefügt"
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Animationen hinzugefügt"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Hauptfenster vergrößert"
-                },
-                {
-                    "art": "fixed",
-                    "was": "Codeverschönerungen"
-                }
-            ]
-        }, {
-            "datum": "04.04.2019",
-            "version": "0.3.0",
-            "inhalte": [{
-                    "art": "hinzugefügt",
-                    "was": "Wenn noch keine Werte gesetzt wurden, wird der Wert auf 30 Minuten gesetzt."
-                }, {
-                    "art": "hinzugefügt",
-                    "was": "Im Changelog werden die Einträge nun gruppiert."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Im Changelog heißt 'added' nun 'hinzugefügt'."
-                }, {
-                    "art": "verbessert",
-                    "was": "Darstellung im Einstellungsfenster verbessert."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Darstellung des Startbuttons verbessert."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Darstellung im Changelog verbessert."
-                }
-            ]
-        }, {
-            "datum": "03.04.2019",
-            "version": "0.2.5",
-            "inhalte": [{
-                    "art": "hinzugefügt",
-                    "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
-                },
-                {
-                    "art": "hinzugefügt",
-                    "was": "Um ein Update zu installieren, muss man auf die Benachrichtigung klicken.<br>So wird der Timer nicht unterbrochen."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Updateprozess verschönert."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Wenn man das Hauptfenster beendet, wird das Programm beendet."
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Abhängigkeiten aktualisiert."
-                }
-            ]
-        }, {
-            "datum": "01.04.2019",
-            "version": "0.1.5",
-            "inhalte": [{
-                    "art": "fixed",
-                    "was": "Nachricht bei Pause behoben"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Nach Klick auf OK wird die Nachricht entfernt"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Update laden verschönert"
-                }
-            ]
-        },
-        {
-            "datum": "01.04.2019",
-            "version": "0.1.3",
-            "inhalte": [{
-                    "art": "hinzugefügt",
-                    "was": "Changelog hinzugefügt"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Codeverschönerungen"
-                }
-            ]
-        }, {
-            "datum": "31.03.2019",
-            "version": "0.1.0",
-            "inhalte": [{
-                    "art": "fixed",
-                    "was": "Startprobleme behoben"
-                },
-                {
-                    "art": "verbessert",
-                    "was": "Codeverschönerungen"
-                }
-            ]
+          "art": "hinzugefügt",
+          "was": "Es gibt nun die Einstellungsmöglichkeit, bei Start des Timers das Fenster zu minimieren."
         }
-    ]
+      ]
+    },
+    {
+      "datum": "12.04.2019",
+      "version": "0.5.4",
+      "inhalte": [
+        {
+          "art": "fixed",
+          "was": "Es wurden Darstellungsprobleme behoben."
+        },
+        {
+          "art": "fixed",
+          "was": "Kleinere Bugs wurden beseitigt :)"
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
+        }
+      ]
+    },
+    {
+      "datum": "11.04.2019",
+      "version": "0.5.0",
+      "inhalte": [
+        {
+          "art": "hinzugefügt",
+          "was": "Aussehen wurde verändert."
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Das Changelog-Fenster wird jetzt eingeblendet."
+        },
+        {
+          "art": "verbessert",
+          "was": "Updateprozess verschönert ♥"
+        },
+        {
+          "art": "verbessert",
+          "was": "Bild im Hauptfenster geändert."
+        }
+      ]
+    },
+    {
+      "datum": "08.04.2019",
+      "version": "0.4.0",
+      "inhalte": [
+        {
+          "art": "fixed",
+          "was": "Kleine Bugfixes."
+        },
+        {
+          "art": "verbessert",
+          "was": "Die komplette Darstellung wurde verschönert."
+        }
+      ]
+    },
+    {
+      "datum": "06.04.2019",
+      "version": "0.3.1",
+      "inhalte": [
+        {
+          "art": "hinzugefügt",
+          "was": "Es gibt nun den 'Nicht sperren' Button.<br>Nach Ablauf der Zeit wird der PC dann nicht gesperrt."
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Beenden Button hinzugefügt"
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Animationen hinzugefügt"
+        },
+        {
+          "art": "verbessert",
+          "was": "Hauptfenster vergrößert"
+        },
+        {
+          "art": "fixed",
+          "was": "Codeverschönerungen"
+        }
+      ]
+    },
+    {
+      "datum": "04.04.2019",
+      "version": "0.3.0",
+      "inhalte": [
+        {
+          "art": "hinzugefügt",
+          "was": "Wenn noch keine Werte gesetzt wurden, wird der Wert auf 30 Minuten gesetzt."
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Im Changelog werden die Einträge nun gruppiert."
+        },
+        {
+          "art": "verbessert",
+          "was": "Im Changelog heißt 'added' nun 'hinzugefügt'."
+        },
+        {
+          "art": "verbessert",
+          "was": "Darstellung im Einstellungsfenster verbessert."
+        },
+        {
+          "art": "verbessert",
+          "was": "Darstellung des Startbuttons verbessert."
+        },
+        {
+          "art": "verbessert",
+          "was": "Darstellung im Changelog verbessert."
+        }
+      ]
+    },
+    {
+      "datum": "03.04.2019",
+      "version": "0.2.5",
+      "inhalte": [
+        {
+          "art": "hinzugefügt",
+          "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
+        },
+        {
+          "art": "hinzugefügt",
+          "was": "Um ein Update zu installieren, muss man auf die Benachrichtigung klicken.<br>So wird der Timer nicht unterbrochen."
+        },
+        {
+          "art": "verbessert",
+          "was": "Updateprozess verschönert."
+        },
+        {
+          "art": "verbessert",
+          "was": "Wenn man das Hauptfenster beendet, wird das Programm beendet."
+        },
+        {
+          "art": "verbessert",
+          "was": "Abhängigkeiten aktualisiert."
+        }
+      ]
+    },
+    {
+      "datum": "01.04.2019",
+      "version": "0.1.5",
+      "inhalte": [
+        {
+          "art": "fixed",
+          "was": "Nachricht bei Pause behoben"
+        },
+        {
+          "art": "verbessert",
+          "was": "Nach Klick auf OK wird die Nachricht entfernt"
+        },
+        {
+          "art": "verbessert",
+          "was": "Update laden verschönert"
+        }
+      ]
+    },
+    {
+      "datum": "01.04.2019",
+      "version": "0.1.3",
+      "inhalte": [
+        {
+          "art": "hinzugefügt",
+          "was": "Changelog hinzugefügt"
+        },
+        {
+          "art": "verbessert",
+          "was": "Codeverschönerungen"
+        }
+      ]
+    },
+    {
+      "datum": "31.03.2019",
+      "version": "0.1.0",
+      "inhalte": [
+        {
+          "art": "fixed",
+          "was": "Startprobleme behoben"
+        },
+        {
+          "art": "verbessert",
+          "was": "Codeverschönerungen"
+        }
+      ]
+    }
+  ]
 }

@@ -2,101 +2,107 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Make A Break!</title>
+    <meta charset="UTF-8">
+    <title>Make A Break!</title>
 
-  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/animatedBorder.css">
-  <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
-  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../css/material/material-dashboard.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animatedBorder.css">
+    <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../css/material/material-dashboard.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
 <body>
-  <main role="main">
+<main role="main">
 
     <div class="content" style="margin-top: 2%;">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title"><img src="../img/logo.png" style="width: 50px;"> Make A Break</h4>
-                <p class="card-category">Mach mit Make A Break mehr Pausen und fühle dich wohler.</p>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div id="startImg">
-                      <img style="width: 270px" src="../img/working-laptop.gif" />
-                    </div>
-
-                    <div id="barContainer" class="invisible">
-                      <span id="pauseIn"></span><br>
-                      <div id="progressbar">
-                        <div id="progressbarInner"></div>
-                      </div>
-                      <div id="beenden"><i class="fas fa-2x fa-stop-circle"></i></div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-
-                    <div class="animated fadeIn" id="buttonContainer">
-                      <div class="row">
-                        <div class="col-lg2">
-                          <div class="container">
-                            <button id="timerStart" class="btn btn-primary my-2"><i class="fas fa-rocket"></i></button>
-                          </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title"><img src="../img/logo.png" style="width: 50px;"> Make A Break</h4>
+                            <p class="card-category">Mach mit Make A Break mehr Pausen und fühle dich wohler.</p>
                         </div>
-                        <div class="col-lg2">
-                          <button id="settingsBtn" class="btn btn-muted my-2"><i class="fas fa-sliders-h"></i></button>
-                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="startImg">
+                                        <img style="width: 270px" src="../img/working-laptop.gif"/>
+                                    </div>
 
-                        <div class="col-lg8">
-                          <div id="updateBarContainer" class="invisible">
-                            <div id="updateTxt"></div>
-                            <div id="updateBar">
-                              <div id="updateBarInner"></div>
+                                    <div id="barContainer" class="invisible">
+                                        <span id="pauseIn"></span><br>
+                                        <div id="progressbar">
+                                            <div id="progressbarInner"></div>
+                                        </div>
+                                        <div id="beenden"><i class="fas fa-2x fa-stop-circle"></i></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+
+                                    <div class="animated fadeIn" id="buttonContainer">
+                                        <div class="row">
+                                            <div class="col-lg2">
+                                                <div class="container">
+                                                    <button id="timerStart" class="btn btn-primary my-2"><i
+                                                            class="fas fa-rocket"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg2">
+                                                <button id="settingsBtn" class="btn btn-muted my-2"><i
+                                                        class="fas fa-sliders-h"></i></button>
+                                            </div>
+
+                                            <div class="col-lg8">
+                                                <div id="updateBarContainer" class="invisible">
+                                                    <div id="updateTxt"></div>
+                                                    <div id="updateBar">
+                                                        <div id="updateBarInner"></div>
+                                                    </div>
+                                                    <div id="updateActionContainer" style="display: inline-block">
+                                                        <i id="syncIcon" class="fas fa-sync fa-spin"></i>
+                                                        <button id="installUpdateBtn"
+                                                                class="invisible animated rubberBand btn my-2"><i
+                                                                class="fas fa-wrench"></i></button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg4 infoContainer">
+                                                <div class="container">
+                                                    <div id="wasNeues"
+                                                         style="display: -webkit-inline-box; margin-top: 10px;"
+                                                         class="animated infinite pulse slow lead text-muted">Gibt's was
+                                                        neues? <i
+                                                                class="fas fa-arrow-right"></i></div>
+                                                    <button id="openChangelog" class="btn btn-info"><i
+                                                            class="fas fa-info"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="updateActionContainer" style="display: inline-block">
-                              <i id="syncIcon" class="fas fa-sync fa-spin"></i>
-                              <button id="installUpdateBtn" class="invisible animated rubberBand btn my-2"><i
-                                  class="fas fa-wrench"></i></button>
-                            </div>
-
-                          </div>
                         </div>
-
-                        <div class="col-lg4 infoContainer">
-                          <div class="container">
-                            <div id="wasNeues" style="display: -webkit-inline-box; margin-top: 10px;"
-                              class="animated infinite pulse slow lead text-muted">Gibt's was neues? <i
-                                class="fas fa-arrow-right"></i></div>
-                            <button id="openChangelog" class="btn btn-info"><i class="fas fa-info"></i></button>
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  </div>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-  </main>
+</main>
 </body>
 <script>
-  if (typeof module === 'object') {
-    window.module = module;
-    module = undefined;
-  }
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
 </script>
 
 <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
