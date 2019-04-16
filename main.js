@@ -11,24 +11,32 @@ const ipc = require('electron').ipcMain;
 const notifier = require('node-notifier');
 const notifierMac = require('electron-notifications');
 const lockSystem = require('lock-system');
+const windowStateKeeper = require('electron-window-state');
 
 let win;
 
 function createWindow() {
+
+    let mainWindowState = windowStateKeeper({
+        defaultWidth: 1000,
+        defaultHeight: 800
+    });
+
+    // Create the window using the state information
     win = new BrowserWindow({
-        width: 715,
-        height: 720,
+        'x'     : mainWindowState.x,
+        'y'     : mainWindowState.y,
+        'width' : mainWindowState.width,
+        'height': mainWindowState.height
     });
 
     win.loadFile('assets/pages/index.html');
-
-    // Öffnen der DevTools.
-    // win.webContents.openDevTools()
-
     win.on('closed', () => {
         win = null;
         app.quit()
     })
+
+    mainWindowState.manage(win);
 }
 
 function createSettingsWindow() {
@@ -62,25 +70,24 @@ function timeOver() {
 
     var isWin = process.platform === "win32";
 
-    if (isWin){
+    if (isWin) {
         notifier.notify({
-            title: 'Make A Break',
-            message: 'In 10 Sek. wird PC gesperrt',
-            icon: path.join(__dirname, 'icon.png'),   // Absolute path (doesn't work on balloons)
-            sound: true,                               // Only Notification Center or Windows Toasters
-            wait: false                               // Wait with callback, until user action is taken against notification
+                title: 'Make A Break',
+                message: 'In 10 Sek. wird PC gesperrt',
+                icon: path.join(__dirname, 'icon.png'), // Absolute path (doesn't work on balloons)
+                sound: true, // Only Notification Center or Windows Toasters
+                wait: false // Wait with callback, until user action is taken against notification
             },
-            function (err, response) {
-            }
+            function (err, response) {}
         );
-    }else{
+    } else {
         const notification = notifierMac.notify('Make a Break', {
-            message : 'In 10 Sek. wird PC gesperrt',
-            icon    : path.join(__dirname, 'icon.png'),
-            buttons : ['Ok'],
+            message: 'In 10 Sek. wird PC gesperrt',
+            icon: path.join(__dirname, 'icon.png'),
+            buttons: ['Ok'],
             duration: 10000,
-            flat    : true
-        })  
+            flat: true
+        })
     }
 
     setTimeout(function () {
@@ -140,8 +147,7 @@ ipc.on('settingsGespeichert', function () {
 });
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
-ipc.on('finishedLoading', function (event, text) {
-});
+ipc.on('finishedLoading', function (event, text) {});
 
 ipc.on('openSettings', function (event, text) {
     createSettingsWindow()

@@ -2,7 +2,7 @@
   "entries": [
     {
       "datum": "16.04.2019",
-      "version": "0.5.7",
+      "version": "0.5.8",
       "inhalte": [
         {
           "art": "fixed",
@@ -13,8 +13,12 @@
           "was": "Es gibt nun die Einstellungsmöglichkeit, bei Start des Timers das Fenster zu minimieren."
         },
         {
+          "art": "hinzugefügt",
+          "was": "Das Hauptfenster merkt sich jetzt die Position und Größe, die Sie bevorzugen."
+        },
+        {
           "art": "verbessert",
-          "was": "Darstellungsoptimierungen"
+          "was": "Darstellungsoptimierungen."
         }
       ]
     },
