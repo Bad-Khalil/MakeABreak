@@ -44,6 +44,13 @@ function getPercent(ms) {
     return (zeit - ms) / (zeit / 100)
 }
 
+function minimieren() {
+
+    if (settingsStore.get('minimieren') === 'x') {
+        remote.BrowserWindow.getFocusedWindow().minimize();
+    }
+}
+
 // -------------- Buttons --------------
 $("#timerStart").click(function () {
     
@@ -56,11 +63,13 @@ $("#timerStart").click(function () {
     } else if (timer.status == 'paused') {
         btn.html(btnPauseValue)
         timer.resume()
+        minimieren()
     } else {
         btn.html(btnPauseValue)
         timer.start(zeit)
         $("#barContainer").removeClass()
         $("#barContainer").addClass('animated fadeIn animated-box in')
+        minimieren()
     }
 })
 

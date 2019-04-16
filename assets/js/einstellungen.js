@@ -34,8 +34,13 @@ function save() {
     let min = $("#timeMin").val()
     let sec = $("#timeSec").val()
     let status = $("#status")
+    let minimieren = ''
     status.removeClass()
     status.addClass("animated bounceIn alert alert-primary")
+
+    if ($("#minimieren").is(':checked')) {
+        minimieren = 'x'
+    }
 
     if (!checkIfNumeric(min, sec)) {
         return
@@ -44,6 +49,7 @@ function save() {
     status.addClass('erfolg')
     settingsStore.set('timeMin', min)
     settingsStore.set('timeSec', sec)
+    settingsStore.set('minimieren', minimieren)
 
     status.html("Erfolgreich gespeichert.")
     ipcRenderer.send('settingsGespeichert')
@@ -52,6 +58,11 @@ function save() {
 $(function () {
     let timeMin = settingsStore.get('timeMin')
     let timeSec = settingsStore.get('timeSec')
+    let minimieren = settingsStore.get('minimieren')
+
+    if (minimieren === 'x') {
+        $("#minimieren").prop('checked', true)
+    }
 
     $("#timeMin").val(timeMin)
     $("#timeSec").val(timeSec)
