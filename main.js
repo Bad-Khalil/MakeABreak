@@ -149,6 +149,19 @@ Menu.setApplicationMenu(menu);
 // -------------------------------------------------------------------
 autoUpdater.on('update-available', (ev, info) => {
     win.webContents.send('message', 'updateAvailable')
+
+    const {dialog} = require('electron')
+
+    const options = {
+        type: 'info',
+        title: 'Information',
+        message: "Es ist ein Update verfügbar. Es wird im Hintergrund geladen.",
+        buttons: ['Alles klar, danke!']
+    }
+
+    dialog.showMessageBox(options, (index) => {
+    })
+
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
