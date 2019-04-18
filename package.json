@@ -1,6 +1,6 @@
 {
   "name": "makeabreak",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "MakeABreak - Der kleine Helfer :)",
   "main": "main.js",
   "scripts": {

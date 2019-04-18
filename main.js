@@ -1,7 +1,8 @@
 const {
     app,
     BrowserWindow,
-    Menu
+    Menu,
+    dialog
 } = require('electron');
 const shell = require('electron').shell
 const path = require('path');
@@ -120,6 +121,22 @@ var menu = Menu.buildFromTemplate([{
             click(){
                 createSettingsWindow()
             }
+        },
+        {
+            label: 'Nach Updates suchen',
+            click(){
+                autoUpdater.checkForUpdates();
+                autoUpdater.on('update-not-available', (ev, info) => {                
+                    const options = {
+                        type   : 'info',
+                        title  : 'Information',
+                        message: "Sie haben die neueste Version.",
+                        buttons: ['Ok']
+                    }
+                
+                    dialog.showMessageBox(options, (index) => {})
+                });
+            }
         }, {
             label: 'Meine Webseite',
             click() {
@@ -149,18 +166,14 @@ Menu.setApplicationMenu(menu);
 autoUpdater.on('update-available', (ev, info) => {
     win.webContents.send('message', 'updateAvailable')
 
-    const {dialog} = require('electron')
-
     const options = {
-        type: 'info',
-        title: 'Information',
+        type   : 'info',
+        title  : 'Information',
         message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
         buttons: ['Alles klar, danke!']
     }
 
-    dialog.showMessageBox(options, (index) => {
-    })
-
+    dialog.showMessageBox(options, (index) => {})
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
@@ -169,6 +182,17 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (ev, info) => {
     win.webContents.send('message', 'updateDownloaded')
+    const dialogOpts = {
+        type: 'info',
+        buttons: ['Ja', 'Nein'],
+        title: 'Application Update',
+        message: 'Make A Break',
+        detail: 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
+      }
+     
+      dialog.showMessageBox(dialogOpts, (response) => {
+        if (response === 0) autoUpdater.quitAndInstall()
+      })
 });
 
 ipc.on('installUpdate', function () {
