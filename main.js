@@ -183,11 +183,11 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (ev, info) => {
     win.webContents.send('message', 'updateDownloaded')
     const dialogOpts = {
-        type: 'info',
+        type   : 'info',
         buttons: ['Ja', 'Nein'],
-        title: 'Application Update',
+        title  : 'Update fertig geladen.',
         message: 'Make A Break',
-        detail: 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
+        detail : 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
       }
      
       dialog.showMessageBox(dialogOpts, (response) => {
