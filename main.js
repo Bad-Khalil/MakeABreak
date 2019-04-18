@@ -1,8 +1,9 @@
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    Menu
 } = require('electron');
-
+const shell = require('electron').shell
 const path = require('path');
 const {
     autoUpdater
@@ -24,9 +25,9 @@ function createWindow() {
 
     // Create the window using the state information
     win = new BrowserWindow({
-        'x'     : mainWindowState.x,
-        'y'     : mainWindowState.y,
-        'width' : mainWindowState.width,
+        'x': mainWindowState.x,
+        'y': mainWindowState.y,
+        'width': mainWindowState.width,
         'height': mainWindowState.height
     });
 
@@ -96,8 +97,6 @@ function timeOver() {
 }
 
 app.on('ready', function () {
-    // const menu = Menu.buildFromTemplate(template);
-    // Menu.setApplicationMenu(menu);
     autoUpdater.checkForUpdates();
     createWindow()
 });
@@ -113,6 +112,33 @@ app.on('activate', () => {
         createWindow()
     }
 });
+
+var menu = Menu.buildFromTemplate([{
+    label: 'Menü',
+    submenu: [
+        {
+            label: 'Einstellungen',
+            click(){
+                createSettingsWindow()
+            }
+        }, {
+            label: 'Meine Webseite',
+            click() {
+                shell.openExternal('https://www.michael-lucas.net')
+            }
+        },
+        {
+            type: 'separator'
+        },
+        {
+            label: 'Beenden',
+            click() {
+                app.quit()
+            }
+        }
+    ]
+}])
+Menu.setApplicationMenu(menu);
 
 
 // In dieser Datei können Sie den Rest des App-spezifischen 
