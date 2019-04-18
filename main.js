@@ -130,7 +130,7 @@ var menu = Menu.buildFromTemplate([{
                     const options = {
                         type   : 'info',
                         title  : 'Information',
-                        message: "Sie haben die neueste Version.",
+                        message: "Sie verwenden die neueste Version.",
                         buttons: ['Ok']
                     }
                 
@@ -170,7 +170,7 @@ autoUpdater.on('update-available', (ev, info) => {
         type   : 'info',
         title  : 'Information',
         message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
-        buttons: ['Alles klar, danke!']
+        buttons: ['Ok']
     }
 
     dialog.showMessageBox(options, (index) => {})
