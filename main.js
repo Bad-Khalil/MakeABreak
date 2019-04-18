@@ -97,7 +97,6 @@ function timeOver() {
 }
 
 app.on('ready', function () {
-    autoUpdater.checkForUpdates();
     createWindow()
 });
 
@@ -155,7 +154,7 @@ autoUpdater.on('update-available', (ev, info) => {
     const options = {
         type: 'info',
         title: 'Information',
-        message: "Es ist ein Update verfügbar. Es wird im Hintergrund geladen.",
+        message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
         buttons: ['Alles klar, danke!']
     }
 
@@ -186,7 +185,9 @@ ipc.on('settingsGespeichert', function () {
 });
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
-ipc.on('finishedLoading', function (event, text) {});
+ipc.on('finishedLoading', function (event, text) {
+    autoUpdater.checkForUpdates();
+});
 
 ipc.on('openSettings', function (event, text) {
     createSettingsWindow()
