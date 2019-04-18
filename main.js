@@ -1,8 +1,10 @@
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    Menu,
+    dialog
 } = require('electron');
-
+const shell = require('electron').shell
 const path = require('path');
 const {
     autoUpdater
@@ -24,9 +26,9 @@ function createWindow() {
 
     // Create the window using the state information
     win = new BrowserWindow({
-        'x'     : mainWindowState.x,
-        'y'     : mainWindowState.y,
-        'width' : mainWindowState.width,
+        'x': mainWindowState.x,
+        'y': mainWindowState.y,
+        'width': mainWindowState.width,
         'height': mainWindowState.height
     });
 
@@ -96,9 +98,6 @@ function timeOver() {
 }
 
 app.on('ready', function () {
-    // const menu = Menu.buildFromTemplate(template);
-    // Menu.setApplicationMenu(menu);
-    autoUpdater.checkForUpdates();
     createWindow()
 });
 
@@ -114,6 +113,49 @@ app.on('activate', () => {
     }
 });
 
+var menu = Menu.buildFromTemplate([{
+    label: 'Menü',
+    submenu: [
+        {
+            label: 'Einstellungen',
+            click(){
+                createSettingsWindow()
+            }
+        },
+        {
+            label: 'Nach Updates suchen',
+            click(){
+                autoUpdater.checkForUpdates();
+                autoUpdater.on('update-not-available', (ev, info) => {                
+                    const options = {
+                        type   : 'info',
+                        title  : 'Information',
+                        message: "Sie verwenden die neueste Version.",
+                        buttons: ['Ok']
+                    }
+                
+                    dialog.showMessageBox(options, (index) => {})
+                });
+            }
+        }, {
+            label: 'Meine Webseite',
+            click() {
+                shell.openExternal('https://www.michael-lucas.net')
+            }
+        },
+        {
+            type: 'separator'
+        },
+        {
+            label: 'Beenden',
+            click() {
+                app.quit()
+            }
+        }
+    ]
+}])
+Menu.setApplicationMenu(menu);
+
 
 // In dieser Datei können Sie den Rest des App-spezifischen 
 // Hauptprozess-Codes einbinden. Sie können den Code auch 
@@ -123,6 +165,15 @@ app.on('activate', () => {
 // -------------------------------------------------------------------
 autoUpdater.on('update-available', (ev, info) => {
     win.webContents.send('message', 'updateAvailable')
+
+    const options = {
+        type   : 'info',
+        title  : 'Information',
+        message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
+        buttons: ['Ok']
+    }
+
+    dialog.showMessageBox(options, (index) => {})
 });
 
 autoUpdater.on('download-progress', (progressObj) => {
@@ -131,6 +182,17 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (ev, info) => {
     win.webContents.send('message', 'updateDownloaded')
+    const dialogOpts = {
+        type: 'info',
+        buttons: ['Ja', 'Nein'],
+        title: 'Application Update',
+        message: 'Make A Break',
+        detail: 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
+      }
+     
+      dialog.showMessageBox(dialogOpts, (response) => {
+        if (response === 0) autoUpdater.quitAndInstall()
+      })
 });
 
 ipc.on('installUpdate', function () {
@@ -147,7 +209,9 @@ ipc.on('settingsGespeichert', function () {
 });
 
 // Wenn App geladen ist, dann Version der App anzeigen lassen
-ipc.on('finishedLoading', function (event, text) {});
+ipc.on('finishedLoading', function (event, text) {
+    autoUpdater.checkForUpdates();
+});
 
 ipc.on('openSettings', function (event, text) {
     createSettingsWindow()

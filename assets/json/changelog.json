@@ -1,11 +1,14 @@
 {
   "entries": [{
       "datum": "18.04.2019",
-      "version": "0.5.9",
-      "inhalte": [
-        {
+      "version": "0.5.10",
+      "inhalte": [{
           "art": "hinzugefügt",
-          "was": "Kleines Menü hinzugefügt."
+          "was": "Menü hinzugefügt."
+        },
+        {
+          "art": "verbessert",
+          "was": "Mitteilungen bei Updates verändert."
         }
       ]
     },
