@@ -8,7 +8,7 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
-  "author": "Michael Lucas",
+  "author": "Michael Lucas <info@michael-lucas.net>",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
@@ -51,6 +51,9 @@
       "target": [
         "zip"
       ]
+    },
+    "linux": {
+      "target": "pacman"
     },
     "nsis": {
       "perMachine": false
