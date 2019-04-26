@@ -24,7 +24,6 @@ function createWindow() {
         defaultHeight: 800
     });
 
-    // Create the window using the state information
     win = new BrowserWindow({
         'x': mainWindowState.x,
         'y': mainWindowState.y,
@@ -68,17 +67,15 @@ function createChangelogWindow() {
 }
 
 function timeOver() {
-    // let pcSperren = true;
-
     var isWin = process.platform === "win32";
 
     if (isWin) {
         notifier.notify({
                 title: 'Make A Break',
                 message: 'In 10 Sek. wird PC gesperrt',
-                icon: path.join(__dirname, 'icon.png'), // Absolute path (doesn't work on balloons)
-                sound: true, // Only Notification Center or Windows Toasters
-                wait: false // Wait with callback, until user action is taken against notification
+                icon: path.join(__dirname, 'icon.png'),
+                sound: true,
+                wait: false
             },
             function (err, response) {}
         );
@@ -115,25 +112,24 @@ app.on('activate', () => {
 
 var menu = Menu.buildFromTemplate([{
     label: 'Menü',
-    submenu: [
-        {
+    submenu: [{
             label: 'Einstellungen',
-            click(){
+            click() {
                 createSettingsWindow()
             }
         },
         {
             label: 'Nach Updates suchen',
-            click(){
+            click() {
                 autoUpdater.checkForUpdates();
-                autoUpdater.on('update-not-available', (ev, info) => {                
+                autoUpdater.on('update-not-available', (ev, info) => {
                     const options = {
-                        type   : 'info',
-                        title  : 'Information',
+                        type: 'info',
+                        title: 'Information',
                         message: "Sie verwenden die neueste Version.",
                         buttons: ['Ok']
                     }
-                
+
                     dialog.showMessageBox(options, (index) => {})
                 });
             }
@@ -142,11 +138,9 @@ var menu = Menu.buildFromTemplate([{
             click() {
                 shell.openExternal('https://www.michael-lucas.net')
             }
-        },
-        {
+        }, {
             type: 'separator'
-        },
-        {
+        }, {
             label: 'Beenden',
             click() {
                 app.quit()
@@ -167,8 +161,8 @@ autoUpdater.on('update-available', (ev, info) => {
     win.webContents.send('message', 'updateAvailable')
 
     const options = {
-        type   : 'info',
-        title  : 'Information',
+        type: 'info',
+        title: 'Information',
         message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
         buttons: ['Ok']
     }
@@ -188,11 +182,11 @@ autoUpdater.on('update-downloaded', (ev, info) => {
         title  : 'Update fertig geladen.',
         message: 'Make A Break',
         detail : 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
-      }
-     
-      dialog.showMessageBox(dialogOpts, (response) => {
+    }
+
+    dialog.showMessageBox(dialogOpts, (response) => {
         if (response === 0) autoUpdater.quitAndInstall()
-      })
+    })
 });
 
 ipc.on('installUpdate', function () {
