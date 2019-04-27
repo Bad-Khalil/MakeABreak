@@ -1,5 +1,16 @@
 {
-  "entries": [{
+  "entries": [
+    {
+      "datum": "27.04.2019",
+      "version": "0.5.13",
+      "inhalte": [
+        {
+          "art": "verbessert",
+          "was": "Kleinere Verbesserungen"
+        }
+      ]
+    },
+    {
       "datum": "18.04.2019",
       "version": "0.5.12",
       "inhalte": [{

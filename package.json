@@ -1,12 +1,15 @@
 {
   "name": "makeabreak",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "description": "MakeABreak - Der kleine Helfer :)",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:all": "yarn dist:mac && yarn dist:win"
   },
   "author": "Michael Lucas <info@michael-lucas.net>",
   "license": "ISC",
