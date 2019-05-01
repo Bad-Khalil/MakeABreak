@@ -1,6 +1,6 @@
 const {ipcRenderer} = require('electron')
-const Store = require('electron-store')
-const {numbers} = require('ml-math')
+const {numbers}     = require('ml-math')
+const Store         = require('electron-store')
 const settingsStore = new Store()
 
 function checkIfNumeric(min, sec) {

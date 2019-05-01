@@ -1,67 +1,56 @@
-var appInfo = require('../../package.json')
-var appName = appInfo.name + ' Version ' + appInfo.version
+let appInfo = require('../../package.json');
+let appName = appInfo.name + ' Version ' + appInfo.version
 $('#appName').html(appName)
 
 auslesen()
 
 // =================================================
-// Liest aus der JSON File alles aus
+// Reads everything from the JSON file
 // =================================================
 function auslesen() {
-    // JSON auslesen
-    var cl = require('../json/changelog.json')
+    let cl      = require('../json/changelog.json')
+    let entries = cl.entries
+    let l       = entries.length
+    let content  = ''
+    let type
+    let changed
 
-    // Einträge
-    var entries = cl.entries
+    // Loop all entries
+    for (let i = 0; i <= l - 1; i++) {
+        // A heading and list for each entry
+        content += `<h3 class='lead'>Version ${entries[i].version} (<span class='smallTxt' style='padding:5px;'>${entries[i].date}</span>)</h3>`
+        content += `<ul class="list-style-none">`
+        let el = entries[i].contents.length
+        let typeBefore = ''
 
-    // Anzahl der Einträge
-    var l = entries.length
+        // Go through contents
+        for (let a = 0; a <= el - 1; a++) {
+            type = entries[i].contents[a].type
+            changed = entries[i].contents[a].changed
 
-    // Variablen initialisieren
-    var inhalt = ''
-    var art
-    var artEben = ''
-    var was
-
-    // Alle Einträge durchgehen
-    for (var i = 0; i <= l - 1; i++) {
-        // Für jeden Eintrag eine Überschrift und Liste
-        inhalt += `<h3 class='lead'>Version ${entries[i].version} (<span class='smallTxt' style='padding:5px;'>${entries[i].datum}</span>)</h3>`
-        inhalt += `<ul class="list-style-none">`
-
-        // Anzahl der Inhalte vom Eintrag
-        var el = entries[i].inhalte.length
-
-        // Inhalte durchgehen
-        for (var a = 0; a <= el - 1; a++) {
-
-            // Auslesen
-            art = entries[i].inhalte[a].art
-            was = entries[i].inhalte[a].was
-
-            if (artEben === entries[i].inhalte[a].art) {
-                inhalt += `
-        <br>- <span class='text'>${was}</span>`
+            if (typeBefore === entries[i].contents[a].type) {
+                content += `
+                <br>- <span class='text'>${changed}</span>`
             } else {
 
-                if (artEben !== '') {
-                    inhalt += `</li>`
+                if (typeBefore !== '') {
+                    content += `</li>`
                 }
-                inhalt += `
-          <li>
-            <div class="badge badge-${art}">${art}</div>
-            - <span class='text'>${was}</span>`
+                content += `
+                <li>
+                    <div class="badge badge-${type}">${type}</div>
+                    - <span class='text'>${changed}</span>`
             }
 
-            artEben = art
+            typeBefore = type
         }
 
-        // Liste schließen
-        inhalt += '</ul><hr/>'
+        // Close list
+        content += '</ul><hr/>'
     }
 
-    // Changelog füllen
-    $('#changelog').html(inhalt)
+    // Fill Changelog
+    $('#changelog').html(content)
 }
 
 $("#createdBy").click(function () {

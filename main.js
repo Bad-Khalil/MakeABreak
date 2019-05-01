@@ -4,11 +4,11 @@ const {
     Menu,
     dialog
 } = require('electron');
-const shell = require('electron').shell
 const path = require('path');
 const {
     autoUpdater
 } = require('electron-updater');
+const shell = require('electron').shell;
 const ipc = require('electron').ipcMain;
 const notifier = require('node-notifier');
 const notifierMac = require('electron-notifications');
@@ -35,7 +35,7 @@ function createWindow() {
     win.on('closed', () => {
         win = null;
         app.quit()
-    })
+    });
 
     mainWindowState.manage(win);
 }
@@ -128,7 +128,7 @@ var menu = Menu.buildFromTemplate([{
                         title: 'Information',
                         message: "You are using the latest version.",
                         buttons: ['Ok']
-                    }
+                    };
 
                     dialog.showMessageBox(options, (index) => {})
                 });
@@ -147,25 +147,21 @@ var menu = Menu.buildFromTemplate([{
             }
         }
     ]
-}])
+}]);
 Menu.setApplicationMenu(menu);
 
-
-// In dieser Datei können Sie den Rest des App-spezifischen 
-// Hauptprozess-Codes einbinden. Sie können den Code auch 
-// auf mehrere Dateien aufteilen und diese hier einbinden.
 // -------------------------------------------------------------------
 // Updater
 // -------------------------------------------------------------------
 autoUpdater.on('update-available', (ev, info) => {
-    win.webContents.send('message', 'updateAvailable')
+    win.webContents.send('message', 'updateAvailable');
 
     const options = {
         type: 'info',
         title: 'Information',
         message: "An update is available.\nIt is loaded in the background.",
         buttons: ['Ok']
-    }
+    };
 
     dialog.showMessageBox(options, (index) => {})
 });
@@ -175,14 +171,14 @@ autoUpdater.on('download-progress', (progressObj) => {
 });
 
 autoUpdater.on('update-downloaded', (ev, info) => {
-    win.webContents.send('message', 'updateDownloaded')
+    win.webContents.send('message', 'updateDownloaded');
     const dialogOpts = {
         type   : 'info',
         buttons: ['Yes', 'No'],
         title  : 'Update loaded.',
         message: 'Make A Break',
         detail : 'The new version has been downloaded.\Do you want to install it now?'
-    }
+    };
 
     dialog.showMessageBox(dialogOpts, (response) => {
         if (response === 0) autoUpdater.quitAndInstall()
@@ -193,7 +189,6 @@ ipc.on('installUpdate', function () {
     autoUpdater.quitAndInstall(false)
 });
 
-// Wenn Zeit des Timers abgelaufen i
 ipc.on('timeOver', function () {
     timeOver()
 });
@@ -202,7 +197,7 @@ ipc.on('settingsGespeichert', function () {
     win.webContents.send('window', 'reload')
 });
 
-// Wenn App geladen ist, dann Version der App anzeigen lassen
+// Called after successful loading the app
 ipc.on('finishedLoading', function (event, text) {
     autoUpdater.checkForUpdates();
 });

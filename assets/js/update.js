@@ -11,7 +11,6 @@ ipcRenderer.on('message', function (event, text) {
 });
 
 ipcRenderer.on('downloading', function (event, percent) {
-    //  $("#updateTxt").html("Lade Update: " + roundTo(percent, 1) + "%")
     $("#updateBarInner").width(roundTo(percent, 0) + "%")
 });
 

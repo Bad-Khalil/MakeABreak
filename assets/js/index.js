@@ -22,7 +22,7 @@ $(function () {
         ipcRenderer.send('openSettings')
     })
 
-    // Wird aufgerufen, wenn man in den Einstellungen auf Speichern geklickt hat
+    // Is called when you have clicked on Save in the settings.
     ipcRenderer.on('window', function (event, text) {
         if (text == 'reload') {
             init()

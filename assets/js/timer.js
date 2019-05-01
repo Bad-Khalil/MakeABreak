@@ -1,8 +1,8 @@
-const Timer = require('tiny-timer');
+const Timer   = require('tiny-timer');
 const roundTo = require('round-to');
-const Store = require('electron-store');
+const Store   = require('electron-store');
 const settingsStore = new Store();
-const {numbers} = require('ml-math');
+const {numbers}  = require('ml-math');
 const { remote } = require('electron');
 
 const btnStartValue = "<i class='fas fa-rocket'></i>";
@@ -12,10 +12,10 @@ var zeit;
 
 init();
 
-// -------------- Hilfsfunktionen --------------
+// -------------- Helper functions --------------
 /**
- * Initialisiert:
- * Liest Settings aus und setzt den Text
+ * Initializes:
+ * Gets Settings and sets the text
  */
 function init() {
     getTimeFromSettings();
@@ -23,7 +23,7 @@ function init() {
 }
 
 /**
- * Liest die Zeiteinstellungen aus den Einstellungen aus
+ * Reads the time settings from the settings
  */
 function getTimeFromSettings() {
     let timeMin = settingsStore.get('timeMin');
@@ -37,8 +37,8 @@ function getTimeFromSettings() {
 }
 
 /**
- * Rechnet anhand der Millisekunden die Prozentanzahl aus
- * Ist für die Progressbar
+ * Calculates the percentage number based on the milliseconds
+ * Is used for the Progressbar
  * @param {*} ms
  */
 function getPercent(ms) {
@@ -90,9 +90,8 @@ $("#beenden").click(function () {
 });
 
 // -------------- TIMER  --------------
-
 /**
- * Führt alles aus, während der Timer läuft
+ * Executes everything while the timer is running
  * @param {*} ms
  */
 function tick(ms) {

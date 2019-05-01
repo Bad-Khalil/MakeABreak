@@ -1,111 +1,111 @@
 {
-  "entries": [
-    {
-      "datum": "01.05.2019",
-      "version": "0.5.14",
-      "inhalte": [
+  "entries": [{
+      "date": "01.05.2019",
+      "version": "0.6.0",
+      "contents": [{
+          "type": "improved",
+          "changed": "The app is now in English"
+        },
         {
-          "art": "improved",
-          "was": "The app is now in English"
+          "type": "fixed",
+          "changed": "Fixed a problem with the changelog that sometimes caused the headline not to be visible"
         }
       ]
     },
     {
-      "datum": "27.04.2019",
+      "date": "27.04.2019",
       "version": "0.5.13",
-      "inhalte": [
-        {
-          "art": "improved",
-          "was": "Minor improvements"
-        }
-      ]
+      "contents": [{
+        "type": "improved",
+        "changed": "Minor improvements"
+      }]
     },
     {
-      "datum": "18.04.2019",
+      "date": "18.04.2019",
       "version": "0.5.12",
-      "inhalte": [{
-          "art": "added",
-          "was": "Menu added."
+      "contents": [{
+          "type": "added",
+          "changed": "Menu added"
         },
         {
-          "art": "improved",
-          "was": "Messages changed for updates."
+          "type": "improved",
+          "changed": "Messages changed for updates"
         }
       ]
     },
     {
-      "datum": "16.04.2019",
+      "date": "16.04.2019",
       "version": "0.5.8",
-      "inhalte": [{
-          "art": "fixed",
-          "was": "Mac notifications have been fixed."
+      "contents": [{
+          "type": "fixed",
+          "changed": "Mac notifications have been fixed"
         },
         {
-          "art": "added",
-          "was": "There is now the option to minimize the window when starting the timer."
+          "type": "added",
+          "changed": "There is now the option to minimize the window when sttypeing the timer"
         },
         {
-          "art": "added",
-          "was": "The main window will now remember the position and size you prefer."
+          "type": "added",
+          "changed": "The main window will now remember the position and size you prefer"
         },
         {
-          "art": "improved",
-          "was": "Display optimizations."
+          "type": "improved",
+          "changed": "Display optimizations"
         }
       ]
     },
     {
-      "datum": "12.04.2019",
+      "date": "12.04.2019",
       "version": "0.5.4",
-      "inhalte": [{
-          "art": "fixed",
-          "was": "Display problems have been fixed."
+      "contents": [{
+          "type": "fixed",
+          "changed": "Display problems have been fixed"
         },
         {
-          "art": "fixed",
-          "was": "Minor bugs have been fixed :)"
+          "type": "fixed",
+          "changed": "Minor bugs have been fixed :)"
         },
         {
-          "art": "added",
-          "was": "It is now possible to change the window sizes."
+          "type": "added",
+          "changed": "It is now possible to change the window sizes"
         },
         {
-          "art": "added",
-          "was": "You can now quickly select in the settings how many minutes you want to pause."
+          "type": "added",
+          "changed": "You can now quickly select in the settings how many minutes you want to pause"
         }
       ]
     },
     {
-      "datum": "11.04.2019",
+      "date": "11.04.2019",
       "version": "0.5.0",
-      "inhalte": [{
-          "art": "added",
-          "was": "Appearance has been changed."
+      "contents": [{
+          "type": "added",
+          "changed": "Appearance has been changed"
         },
         {
-          "art": "added",
-          "was": "The Changelog window is now displayed."
+          "type": "added",
+          "changed": "The Changelog window is now displayed"
         },
         {
-          "art": "improved",
-          "was": "Update process embellished ♥"
+          "type": "improved",
+          "changed": "Update process embellished ♥"
         },
         {
-          "art": "improved",
-          "was": "Image in main window changed."
+          "type": "improved",
+          "changed": "Image in main window changed"
         }
       ]
     },
     {
-      "datum": "08.04.2019",
+      "date": "08.04.2019",
       "version": "0.4.0",
-      "inhalte": [{
-          "art": "fixed",
-          "was": "Minor bugfixes."
+      "contents": [{
+          "type": "fixed",
+          "changed": "Minor bugfixes"
         },
         {
-          "art": "improved",
-          "was": "The complete representation was embellished."
+          "type": "improved",
+          "changed": "The complete representation changed embellished"
         }
       ]
     }
