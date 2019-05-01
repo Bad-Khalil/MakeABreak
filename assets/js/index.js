@@ -5,11 +5,11 @@ const {
 $(function () {
     ipcRenderer.send('finishedLoading')
     setTimeout(function () {
-        $("#wasNeues").addClass("animated fadeOut")
+        $("#somethingNew").addClass("animated fadeOut")
 
         setTimeout(function () {
-            $("#wasNeues").removeClass();
-            $("#wasNeues").addClass("invisible")
+            $("#somethingNew").removeClass();
+            $("#somethingNew").addClass("invisible")
         }, 1000);
 
     }, 2000);

@@ -158,11 +158,11 @@
     margin: 0;
 }
 
-.erfolg {
+.success {
     background-color: #0c9e0c;
 }
 
-.keinErfolg {
+.noSuccess {
     background-color: #bb1717;
 }
 
@@ -176,6 +176,6 @@
     background-color: #9c27b0;
 }
 
-#wasNeues {
+#somethingNew {
     font-size: small;
 }

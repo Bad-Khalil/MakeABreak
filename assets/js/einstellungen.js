@@ -10,8 +10,8 @@ function checkIfNumeric(min, sec) {
             min = 0
             $("#timeMin").val('0')
         } else {
-            status.addClass('keinErfolg')
-            status.html("Ungültige Zahl!")
+            status.addClass('noSuccess')
+            status.html("Invalid number!")
             return false
         }
     }
@@ -21,8 +21,8 @@ function checkIfNumeric(min, sec) {
             sec = 0
             $("#timeSec").val('0')
         } else {
-            status.addClass('keinErfolg')
-            status.html("Ungültige Zahl!")
+            status.addClass('noSuccess')
+            status.html("Invalid number!")
             return false
         }
     }
@@ -47,12 +47,12 @@ function save() {
         return
     }
 
-    status.addClass('erfolg')
+    status.addClass('success')
     settingsStore.set('timeMin', min)
     settingsStore.set('timeSec', sec)
     settingsStore.set('minimieren', minimieren)
 
-    status.html("Erfolgreich gespeichert.")
+    status.html("Successfully saved.")
     ipcRenderer.send('settingsGespeichert')
 }
 
@@ -70,8 +70,8 @@ $(function () {
 })
 
 $("#timeMin").change(function () {
-    $("#status").removeClass('erfolg keinErfolg status')
-    $("#status").html("Setze hier deine Werte.")
+    $("#status").removeClass('success noSuccess status')
+    $("#status").html("Set your values here.")
 })
 
 $("#btnSpeichern").click(function () {

@@ -72,7 +72,7 @@ function timeOver() {
     if (isWin) {
         notifier.notify({
                 title: 'Make A Break',
-                message: 'In 10 Sek. wird PC gesperrt',
+                message: 'PC is locked in 10 sec.',
                 icon: path.join(__dirname, 'icon.png'),
                 sound: true,
                 wait: false
@@ -81,7 +81,7 @@ function timeOver() {
         );
     } else {
         const notification = notifierMac.notify('Make a Break', {
-            message: 'In 10 Sek. wird PC gesperrt',
+            message: 'PC is locked in 10 sec.',
             icon: path.join(__dirname, 'icon.png'),
             buttons: ['Ok'],
             duration: 10000,
@@ -111,22 +111,22 @@ app.on('activate', () => {
 });
 
 var menu = Menu.buildFromTemplate([{
-    label: 'Menü',
+    label: 'Menu',
     submenu: [{
-            label: 'Einstellungen',
+            label: 'Settings',
             click() {
                 createSettingsWindow()
             }
         },
         {
-            label: 'Nach Updates suchen',
+            label: 'Check for updates',
             click() {
                 autoUpdater.checkForUpdates();
                 autoUpdater.on('update-not-available', (ev, info) => {
                     const options = {
                         type: 'info',
                         title: 'Information',
-                        message: "Sie verwenden die neueste Version.",
+                        message: "You are using the latest version.",
                         buttons: ['Ok']
                     }
 
@@ -134,14 +134,14 @@ var menu = Menu.buildFromTemplate([{
                 });
             }
         }, {
-            label: 'Meine Webseite',
+            label: 'Visit my website',
             click() {
                 shell.openExternal('https://www.michael-lucas.net')
             }
         }, {
             type: 'separator'
         }, {
-            label: 'Beenden',
+            label: 'Exit',
             click() {
                 app.quit()
             }
@@ -163,7 +163,7 @@ autoUpdater.on('update-available', (ev, info) => {
     const options = {
         type: 'info',
         title: 'Information',
-        message: "Es ist ein Update verfügbar.\nEs wird im Hintergrund geladen.",
+        message: "An update is available.\nIt is loaded in the background.",
         buttons: ['Ok']
     }
 
@@ -178,10 +178,10 @@ autoUpdater.on('update-downloaded', (ev, info) => {
     win.webContents.send('message', 'updateDownloaded')
     const dialogOpts = {
         type   : 'info',
-        buttons: ['Ja', 'Nein'],
-        title  : 'Update fertig geladen.',
+        buttons: ['Yes', 'No'],
+        title  : 'Update loaded.',
         message: 'Make A Break',
-        detail : 'Die neue Version wurde heruntergeladen.\nMöchten Sie die Version jetzt installieren?'
+        detail : 'The new version has been downloaded.\Do you want to install it now?'
     }
 
     dialog.showMessageBox(dialogOpts, (response) => {

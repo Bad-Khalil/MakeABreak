@@ -1,7 +1,7 @@
 {
   "name": "makeabreak",
-  "version": "0.5.13",
-  "description": "MakeABreak - Der kleine Helfer :)",
+  "version": "0.5.14",
+  "description": "MakeABreak - The little helper :)",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

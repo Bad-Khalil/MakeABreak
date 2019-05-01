@@ -1,12 +1,22 @@
 {
   "entries": [
     {
+      "datum": "01.05.2019",
+      "version": "0.5.14",
+      "inhalte": [
+        {
+          "art": "improved",
+          "was": "The app is now in English"
+        }
+      ]
+    },
+    {
       "datum": "27.04.2019",
       "version": "0.5.13",
       "inhalte": [
         {
-          "art": "verbessert",
-          "was": "Kleinere Verbesserungen"
+          "art": "improved",
+          "was": "Minor improvements"
         }
       ]
     },
@@ -14,12 +24,12 @@
       "datum": "18.04.2019",
       "version": "0.5.12",
       "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Menü hinzugefügt."
+          "art": "added",
+          "was": "Menu added."
         },
         {
-          "art": "verbessert",
-          "was": "Mitteilungen bei Updates verändert."
+          "art": "improved",
+          "was": "Messages changed for updates."
         }
       ]
     },
@@ -28,19 +38,19 @@
       "version": "0.5.8",
       "inhalte": [{
           "art": "fixed",
-          "was": "Benachrichtigungen beim Mac wurden korrigiert."
+          "was": "Mac notifications have been fixed."
         },
         {
-          "art": "hinzugefügt",
-          "was": "Es gibt nun die Einstellungsmöglichkeit, bei Start des Timers das Fenster zu minimieren."
+          "art": "added",
+          "was": "There is now the option to minimize the window when starting the timer."
         },
         {
-          "art": "hinzugefügt",
-          "was": "Das Hauptfenster merkt sich jetzt die Position und Größe, die Sie bevorzugen."
+          "art": "added",
+          "was": "The main window will now remember the position and size you prefer."
         },
         {
-          "art": "verbessert",
-          "was": "Darstellungsoptimierungen."
+          "art": "improved",
+          "was": "Display optimizations."
         }
       ]
     },
@@ -49,19 +59,19 @@
       "version": "0.5.4",
       "inhalte": [{
           "art": "fixed",
-          "was": "Es wurden Darstellungsprobleme behoben."
+          "was": "Display problems have been fixed."
         },
         {
           "art": "fixed",
-          "was": "Kleinere Bugs wurden beseitigt :)"
+          "was": "Minor bugs have been fixed :)"
         },
         {
-          "art": "hinzugefügt",
-          "was": "Es ist nun Möglich, die Größen der Fenster zu verändern."
+          "art": "added",
+          "was": "It is now possible to change the window sizes."
         },
         {
-          "art": "hinzugefügt",
-          "was": "Man kann in den Einstellungen nun schnell auswählen, in wie vielen Minuten man Pause machen möchte."
+          "art": "added",
+          "was": "You can now quickly select in the settings how many minutes you want to pause."
         }
       ]
     },
@@ -69,20 +79,20 @@
       "datum": "11.04.2019",
       "version": "0.5.0",
       "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Aussehen wurde verändert."
+          "art": "added",
+          "was": "Appearance has been changed."
         },
         {
-          "art": "hinzugefügt",
-          "was": "Das Changelog-Fenster wird jetzt eingeblendet."
+          "art": "added",
+          "was": "The Changelog window is now displayed."
         },
         {
-          "art": "verbessert",
-          "was": "Updateprozess verschönert ♥"
+          "art": "improved",
+          "was": "Update process embellished ♥"
         },
         {
-          "art": "verbessert",
-          "was": "Bild im Hauptfenster geändert."
+          "art": "improved",
+          "was": "Image in main window changed."
         }
       ]
     },
@@ -91,133 +101,11 @@
       "version": "0.4.0",
       "inhalte": [{
           "art": "fixed",
-          "was": "Kleine Bugfixes."
+          "was": "Minor bugfixes."
         },
         {
-          "art": "verbessert",
-          "was": "Die komplette Darstellung wurde verschönert."
-        }
-      ]
-    },
-    {
-      "datum": "06.04.2019",
-      "version": "0.3.1",
-      "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Es gibt nun den 'Nicht sperren' Button.<br>Nach Ablauf der Zeit wird der PC dann nicht gesperrt."
-        },
-        {
-          "art": "hinzugefügt",
-          "was": "Beenden Button hinzugefügt"
-        },
-        {
-          "art": "hinzugefügt",
-          "was": "Animationen hinzugefügt"
-        },
-        {
-          "art": "verbessert",
-          "was": "Hauptfenster vergrößert"
-        },
-        {
-          "art": "fixed",
-          "was": "Codeverschönerungen"
-        }
-      ]
-    },
-    {
-      "datum": "04.04.2019",
-      "version": "0.3.0",
-      "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Wenn noch keine Werte gesetzt wurden, wird der Wert auf 30 Minuten gesetzt."
-        },
-        {
-          "art": "hinzugefügt",
-          "was": "Im Changelog werden die Einträge nun gruppiert."
-        },
-        {
-          "art": "verbessert",
-          "was": "Im Changelog heißt 'added' nun 'hinzugefügt'."
-        },
-        {
-          "art": "verbessert",
-          "was": "Darstellung im Einstellungsfenster verbessert."
-        },
-        {
-          "art": "verbessert",
-          "was": "Darstellung des Startbuttons verbessert."
-        },
-        {
-          "art": "verbessert",
-          "was": "Darstellung im Changelog verbessert."
-        }
-      ]
-    },
-    {
-      "datum": "03.04.2019",
-      "version": "0.2.5",
-      "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Nach Ablauf der Zeit wird der PC nach 5 Sekunden gesperrt."
-        },
-        {
-          "art": "hinzugefügt",
-          "was": "Um ein Update zu installieren, muss man auf die Benachrichtigung klicken.<br>So wird der Timer nicht unterbrochen."
-        },
-        {
-          "art": "verbessert",
-          "was": "Updateprozess verschönert."
-        },
-        {
-          "art": "verbessert",
-          "was": "Wenn man das Hauptfenster beendet, wird das Programm beendet."
-        },
-        {
-          "art": "verbessert",
-          "was": "Abhängigkeiten aktualisiert."
-        }
-      ]
-    },
-    {
-      "datum": "01.04.2019",
-      "version": "0.1.5",
-      "inhalte": [{
-          "art": "fixed",
-          "was": "Nachricht bei Pause behoben"
-        },
-        {
-          "art": "verbessert",
-          "was": "Nach Klick auf OK wird die Nachricht entfernt"
-        },
-        {
-          "art": "verbessert",
-          "was": "Update laden verschönert"
-        }
-      ]
-    },
-    {
-      "datum": "01.04.2019",
-      "version": "0.1.3",
-      "inhalte": [{
-          "art": "hinzugefügt",
-          "was": "Changelog hinzugefügt"
-        },
-        {
-          "art": "verbessert",
-          "was": "Codeverschönerungen"
-        }
-      ]
-    },
-    {
-      "datum": "31.03.2019",
-      "version": "0.1.0",
-      "inhalte": [{
-          "art": "fixed",
-          "was": "Startprobleme behoben"
-        },
-        {
-          "art": "verbessert",
-          "was": "Codeverschönerungen"
+          "art": "improved",
+          "was": "The complete representation was embellished."
         }
       ]
     }

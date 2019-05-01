@@ -19,7 +19,7 @@ init();
  */
 function init() {
     getTimeFromSettings();
-    $("#maxTimer").html("Pause nach " + roundTo((zeit / 1000) / 60, 1) + " Minuten")
+    $("#maxTimer").html("Break after " + roundTo((zeit / 1000) / 60, 1) + " minutes")
 }
 
 /**
@@ -98,14 +98,14 @@ $("#beenden").click(function () {
 function tick(ms) {
     let pauseInSec = roundTo(ms / 1000, 0);
     let pauseInMin = roundTo(pauseInSec / 60, 1);
-    let minutenString = "Minuten";
+    let minutenString = "minutes";
 
     if (roundTo(pauseInMin, 1) == 1) {
-        minutenString = "Minute"
+        minutenString = "minute"
     }
 
     $("#progressbarInner").width(getPercent(ms) + "%");
-    $("#pauseIn").html("Pause in " + pauseInMin + " " + minutenString)
+    $("#pauseIn").html("Break in " + pauseInMin + " " + minutenString)
 }
 
 timer.on('tick', (ms) => {
