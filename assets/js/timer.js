@@ -45,9 +45,9 @@ function getPercent(ms) {
     return (zeit - ms) / (zeit / 100)
 }
 
-function minimieren() {
+function minimize() {
 
-    if (settingsStore.get('minimieren') === 'x') {
+    if (settingsStore.get('minimize') === 'x') {
         remote.BrowserWindow.getFocusedWindow().minimize();
     }
 }
@@ -58,19 +58,19 @@ $("#timerStart").click(function () {
     let btn = $("#timerStart");
     $("#startImg").addClass('invisible');
 
-    if (timer.status == 'running') {
+    if (timer.status === 'running') {
         btn.html(btnStartValue);
         timer.pause()
-    } else if (timer.status == 'paused') {
+    } else if (timer.status === 'paused') {
         btn.html(btnPauseValue);
         timer.resume();
-        minimieren()
+        minimize()
     } else {
         btn.html(btnPauseValue);
         timer.start(zeit);
         $("#barContainer").removeClass();
         $("#barContainer").addClass('animated fadeIn animated-box in');
-        minimieren()
+        minimize()
     }
 });
 
@@ -99,7 +99,7 @@ function tick(ms) {
     let pauseInMin = roundTo(pauseInSec / 60, 1);
     let minutenString = "minutes";
 
-    if (roundTo(pauseInMin, 1) == 1) {
+    if (roundTo(pauseInMin, 1) === 1) {
         minutenString = "minute"
     }
 
@@ -110,8 +110,6 @@ function tick(ms) {
 timer.on('tick', (ms) => {
     tick(ms)
 });
-
-timer.on('statusChanged', (ms) => {});
 
 timer.on('done', (ms) => {
     ipcRenderer.send('timeOver');

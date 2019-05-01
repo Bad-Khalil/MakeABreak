@@ -1,9 +1,7 @@
 ipcRenderer.on('message', function (event, text) {
     $("#updateBarContainer").removeClass('invisible');
 
-    if (text == 'updateAvailable') {
-        text = "An update is available."
-    } else if (text == 'updateDownloaded') {
+    if (text === 'updateDownloaded') {
         $("#updateBarInner").width("100%");
         $("#syncIcon").addClass('invisible');
         $("#installUpdateBtn").removeClass('invisible')

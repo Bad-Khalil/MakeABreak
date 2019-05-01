@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Make A Break!</title>
-
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -13,75 +12,75 @@
 </head>
 
 <body>
-    <main role="main">
-        <div class="container-fluid animated fadeIn">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">Settings</h4>
-                            <p class="card-category">Change your settings</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="container">
+<main role="main">
+    <div class="container-fluid animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Settings</h4>
+                        <p class="card-category">Change your settings</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="container">
 
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Quickselect</label>
-                                            <select id="quickSelect" class="form-control form-control-lg">
-                                                <option value="">Select</option>
-                                                <option value="1">1 minute</option>
-                                                <option value="5">5 minutes</option>
-                                                <option value="10">10 minutes</option>
-                                                <option value="15">15 minutes</option>
-                                                <option value="20">20 minutes</option>
-                                                <option value="25">25 minutes</option>
-                                                <option value="30">30 minutes</option>
-                                                <option value="35">35 minutes</option>
-                                                <option value="40">40 minutes</option>
-                                            </select>
-                                        </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Quickselect</label>
+                                        <select id="quickSelect" class="form-control form-control-lg">
+                                            <option value="">Select</option>
+                                            <option value="1">1 minute</option>
+                                            <option value="5">5 minutes</option>
+                                            <option value="10">10 minutes</option>
+                                            <option value="15">15 minutes</option>
+                                            <option value="20">20 minutes</option>
+                                            <option value="25">25 minutes</option>
+                                            <option value="30">30 minutes</option>
+                                            <option value="35">35 minutes</option>
+                                            <option value="40">40 minutes</option>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Break after x minutes</label>
-                                            <input id="timeMin" type="text" class="form-control" value="30">
-                                        </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Break after x minutes</label>
+                                        <input id="timeMin" type="text" class="form-control" value="30">
                                     </div>
-                                    <div class="col-lg6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Break after x seconds</label>
-                                            <input type="text" id="timeSec" class="form-control" value="0">
-                                        </div>
+                                </div>
+                                <div class="col-lg6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Break after x seconds</label>
+                                        <input type="text" id="timeSec" class="form-control" value="0">
                                     </div>
-                                    <div class="col-lg6">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" id="minimieren">
-                                                <span class="form-check-sign">
+                                </div>
+                                <div class="col-lg6">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" id="minimize">
+                                            <span class="form-check-sign">
                                                     <span class="check"></span>
                                                 </span>
-                                                Minimize after start
-                                            </label>
-                                        </div>
+                                            Minimize after start
+                                        </label>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <button id="btnSpeichern" type="submit" class="btn btn-primary pull-right"><i
-                                    class="fas fa-save fa-2x"></i></button>
-                            <div id="status" class="invisible">
-                                <span>Saved</span>
-                            </div>
+                        <button id="btnSpeichern" type="submit" class="btn btn-primary pull-right"><i
+                                class="fas fa-save fa-2x"></i></button>
+                        <div id="status" class="invisible">
+                            <span>Saved</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </main>
+</main>
 </body>
 <script>
     if (typeof module === 'object') {

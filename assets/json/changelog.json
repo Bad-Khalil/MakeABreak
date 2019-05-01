@@ -1,8 +1,10 @@
 {
-  "entries": [{
+  "entries": [
+    {
       "date": "01.05.2019",
       "version": "0.6.0",
-      "contents": [{
+      "contents": [
+        {
           "type": "improved",
           "changed": "The app is now in English"
         },
@@ -15,15 +17,18 @@
     {
       "date": "27.04.2019",
       "version": "0.5.13",
-      "contents": [{
-        "type": "improved",
-        "changed": "Minor improvements"
-      }]
+      "contents": [
+        {
+          "type": "improved",
+          "changed": "Minor improvements"
+        }
+      ]
     },
     {
       "date": "18.04.2019",
       "version": "0.5.12",
-      "contents": [{
+      "contents": [
+        {
           "type": "added",
           "changed": "Menu added"
         },
@@ -36,7 +41,8 @@
     {
       "date": "16.04.2019",
       "version": "0.5.8",
-      "contents": [{
+      "contents": [
+        {
           "type": "fixed",
           "changed": "Mac notifications have been fixed"
         },
@@ -57,7 +63,8 @@
     {
       "date": "12.04.2019",
       "version": "0.5.4",
-      "contents": [{
+      "contents": [
+        {
           "type": "fixed",
           "changed": "Display problems have been fixed"
         },
@@ -78,7 +85,8 @@
     {
       "date": "11.04.2019",
       "version": "0.5.0",
-      "contents": [{
+      "contents": [
+        {
           "type": "added",
           "changed": "Appearance has been changed"
         },
@@ -99,7 +107,8 @@
     {
       "date": "08.04.2019",
       "version": "0.4.0",
-      "contents": [{
+      "contents": [
+        {
           "type": "fixed",
           "changed": "Minor bugfixes"
         },
