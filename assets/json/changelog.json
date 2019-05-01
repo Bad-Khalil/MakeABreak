@@ -9,6 +9,10 @@
           "changed": "The app is now in English"
         },
         {
+          "type": "improved",
+          "changed": "Code improvements"
+        },
+        {
           "type": "fixed",
           "changed": "Fixed a problem with the changelog that sometimes caused the headline not to be visible"
         }
